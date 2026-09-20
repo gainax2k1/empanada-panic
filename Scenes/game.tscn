@@ -1,3 +1,16 @@
 [gd_scene format=3 uid="uid://bs2t46vpj3p5x"]
 
+[ext_resource type="PackedScene" uid="uid://1h6ur6l3yqmt" path="res://Scenes/battle.tscn" id="1_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://dpcv6kh48x6qu" path="res://Scenes/menu.tscn" id="2_3dryh"]
+[ext_resource type="PackedScene" uid="uid://hw0ebeffof7r" path="res://Scenes/overworld.tscn" id="3_wowpa"]
+
 [node name="Game" type="Node2D" unique_id=291622889]
+
+[node name="Battle" parent="." unique_id=1766313817 instance=ExtResource("1_wrm1d")]
+position = Vector2(-1, 0)
+
+[node name="Menu" parent="." unique_id=1398596061 instance=ExtResource("2_3dryh")]
+position = Vector2(0, -1)
+
+[node name="Overworld" parent="." unique_id=1074243832 instance=ExtResource("3_wowpa")]
+position = Vector2(-1, -3)

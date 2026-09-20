@@ -14,6 +14,10 @@ config/name="Empanada Panic"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://ds2q26pac5vlw"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -22,6 +26,16 @@ window/stretch/aspect="expand"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/project-time-tracker/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Audio/": "pink",
+"res://Graphics/": "purple",
+"res://Scenes/": "yellow",
+"res://Scripts/": "green",
+"res://addons/": "gray"
+}
 
 [physics]
 
