@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="Dialogue" format=3 uid="uid://8cwdaofwdnmf"]
+
+[ext_resource type="Script" uid="uid://c85ijcfyrxedo" path="res://Scripts/DialogLine.gd" id="1_mits7"]
+[ext_resource type="Script" uid="uid://dxa4kqw3ojbq1" path="res://Scripts/Dialogue.gd" id="2_aw8ou"]
+
+[sub_resource type="Resource" id="Resource_6fa4d"]
+script = ExtResource("1_mits7")
+SPKR_Name = "test_spkr_name"
+SPKR_Icon = "tex_spkr_icon"
+SPKR_Line = Array[String](["test english", "test spanish"])
+metadata/_custom_type_script = "uid://c85ijcfyrxedo"
+
+[sub_resource type="Resource" id="Resource_3dryh"]
+script = ExtResource("1_mits7")
+SPKR_Name = "test_spkr_name_2"
+SPKR_Icon = "test_spkr_icon_2"
+SPKR_Line = Array[String](["test english 2", "test spanish 2"])
+metadata/_custom_type_script = "uid://c85ijcfyrxedo"
+
+[resource]
+script = ExtResource("2_aw8ou")
+Dialogue = Array[ExtResource("1_mits7")]([SubResource("Resource_6fa4d"), SubResource("Resource_3dryh")])
+metadata/_custom_type_script = "uid://dxa4kqw3ojbq1"
