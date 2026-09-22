@@ -4,3 +4,10 @@
 
 [node name="Interior" type="Node2D" unique_id=668433556]
 script = ExtResource("1_bxmwn")
+
+[node name="Label" type="Label" parent="." unique_id=944945587]
+offset_left = 467.0
+offset_top = 244.0
+offset_right = 507.0
+offset_bottom = 267.0
+text = "INTERIOR OF HOME"

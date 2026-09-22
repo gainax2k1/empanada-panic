@@ -4,3 +4,10 @@
 
 [node name="Overworld" type="Node2D" unique_id=1074243832]
 script = ExtResource("1_l45s6")
+
+[node name="Label" type="Label" parent="." unique_id=55633309]
+offset_left = 431.0
+offset_top = 292.0
+offset_right = 571.0
+offset_bottom = 315.0
+text = "OVERWORLD MAP"

@@ -25,6 +25,8 @@ func set_dialogue(didx: String):
 
 # TODO: automate "end of dialogue" protocol?
 # consider safety checks for dialog size, script size...
+func set_lang(lang:int) ->void:
+	LANG = lang
 
 func spkr_name() -> String:
 	return current_line.SPKR_Name

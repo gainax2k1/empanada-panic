@@ -4,3 +4,10 @@
 
 [node name="Battle" type="Node2D" unique_id=1766313817]
 script = ExtResource("1_w7k78")
+
+[node name="Label" type="Label" parent="." unique_id=2100474552]
+offset_left = 386.0
+offset_top = 217.0
+offset_right = 507.0
+offset_bottom = 240.0
+text = "BATTLE SCREEN"
