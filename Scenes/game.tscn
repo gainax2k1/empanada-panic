@@ -8,13 +8,16 @@
 [node name="Game" type="Node2D" unique_id=291622889]
 
 [node name="Battle" parent="." unique_id=1766313817 instance=ExtResource("1_wrm1d")]
+visible = false
 position = Vector2(-1, 0)
 
 [node name="Menu" parent="." unique_id=1398596061 instance=ExtResource("2_3dryh")]
 position = Vector2(0, -1)
 
 [node name="Overworld" parent="." unique_id=1074243832 instance=ExtResource("3_wowpa")]
+visible = false
 position = Vector2(-1, -3)
 
 [node name="Interior" parent="." unique_id=668433556 instance=ExtResource("4_3dryh")]
+visible = false
 position = Vector2(-2, -1)

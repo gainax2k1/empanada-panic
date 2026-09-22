@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dpcv6kh48x6qu"]
 
 [ext_resource type="Script" uid="uid://cbhhd4qja65a2" path="res://Scripts/menu.gd" id="1_1rerr"]
+[ext_resource type="Texture2D" uid="uid://sojnrwfmw6v3" path="res://Graphics/Exterior/cloud_large.png" id="2_cayip"]
 [ext_resource type="AudioStream" uid="uid://ccncwl5qvdfn3" path="res://Audio/Sfx/Click.ogg" id="2_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://cochiwby3hbtq" path="res://Graphics/Exterior/cloud_small.png" id="3_158mb"]
 
 [node name="Menu" type="Node2D" unique_id=1398596061]
 script = ExtResource("1_1rerr")
@@ -14,11 +16,23 @@ offset_bottom = 291.0
 theme_override_font_sizes/normal_font_size = 51
 text = "Empanada Panic!"
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=323777806]
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1871145604]
+repeat_size = Vector2(200, 0)
+autoscroll = Vector2(50, 0)
+repeat_times = 9
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=10680704]
+[node name="CloudsFar" type="Sprite2D" parent="Parallax2D" unique_id=1956417809]
+position = Vector2(246, 168)
+texture = ExtResource("3_158mb")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1446701413]
+[node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=1767232414]
+repeat_size = Vector2(500, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 5
+
+[node name="CloudsNear" type="Sprite2D" parent="ParallaxBackground" unique_id=367533022]
+position = Vector2(254, 72)
+texture = ExtResource("2_cayip")
 
 [node name="Foreground" type="TileMapLayer" parent="." unique_id=798714591]
 
