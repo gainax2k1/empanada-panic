@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://1h6ur6l3yqmt"]
 
 [ext_resource type="Script" uid="uid://cxtr4o7xdida" path="res://Scripts/battle.gd" id="1_w7k78"]
+[ext_resource type="Texture2D" uid="uid://cochiwby3hbtq" path="res://Graphics/Exterior/cloud_small.png" id="2_1ruyk"]
+[ext_resource type="Texture2D" uid="uid://sojnrwfmw6v3" path="res://Graphics/Exterior/cloud_large.png" id="3_1otgo"]
 
 [node name="Battle" type="Node2D" unique_id=1766313817]
 script = ExtResource("1_w7k78")
@@ -11,3 +13,23 @@ offset_top = 217.0
 offset_right = 507.0
 offset_bottom = 240.0
 text = "BATTLE SCREEN"
+
+[node name="FarParallax2D" type="Parallax2D" parent="Label" unique_id=1793041258]
+scroll_offset = Vector2(0, -200)
+repeat_size = Vector2(200, 0)
+autoscroll = Vector2(50, 0)
+repeat_times = 9
+
+[node name="CloudsFar" type="Sprite2D" parent="Label/FarParallax2D" unique_id=59494384]
+position = Vector2(246, 168)
+texture = ExtResource("2_1ruyk")
+
+[node name="NearParallax2D" type="Parallax2D" parent="Label" unique_id=264407820]
+scroll_offset = Vector2(0, -200)
+repeat_size = Vector2(250, 0)
+autoscroll = Vector2(100, 0)
+repeat_times = 5
+
+[node name="CloudsNear" type="Sprite2D" parent="Label/NearParallax2D" unique_id=1416025763]
+position = Vector2(254, 72)
+texture = ExtResource("3_1otgo")

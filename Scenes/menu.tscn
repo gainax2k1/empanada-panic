@@ -41,7 +41,7 @@ offset_left = 356.0
 offset_top = 506.0
 offset_right = 774.0
 offset_bottom = 564.0
-text = "Check out my other games:  https://gainax2k1.itch.io/!"
+text = "Check out my other games!  https://gainax2k1.itch.io/"
 uri = "\"https://gainax2k1.itch.io/\""
 
 [node name="Start_Button" type="Button" parent="." unique_id=337570640]
@@ -63,11 +63,12 @@ offset_left = 510.0
 offset_top = 354.0
 offset_right = 638.0
 offset_bottom = 385.0
+alignment = 1
 selected = 0
 item_count = 2
-popup/item_0/text = "Enlish"
+popup/item_0/text = "English - inglés"
 popup/item_0/id = 0
-popup/item_1/text = "Español"
+popup/item_1/text = "Español - Spanish"
 popup/item_1/id = 1
 
 [node name="Button_Click" type="AudioStreamPlayer2D" parent="." unique_id=1226036360]
