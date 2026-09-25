@@ -7,6 +7,9 @@
 
 [node name="Game" type="Node2D" unique_id=291622889]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=766391633]
+anchor_mode = 0
+
 [node name="Battle" parent="." unique_id=1766313817 instance=ExtResource("1_wrm1d")]
 visible = false
 position = Vector2(-1, 0)
