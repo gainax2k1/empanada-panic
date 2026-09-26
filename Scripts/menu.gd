@@ -17,7 +17,7 @@ func _on_quit_buton_pressed() -> void:
 
 func _on_start_button_pressed() -> void:
 	_click_sound()
-	GameManager.change_scene("res://Scenes/interior.tscn", "TEST_TRANS") # Replace with function body.
+	GameManager.change_scene("res://Scenes/interior.tscn", "Fade") # Replace with function body.
 
 func _on_check_button_toggled(toggled_on: bool) -> void:
 	_click_sound()
