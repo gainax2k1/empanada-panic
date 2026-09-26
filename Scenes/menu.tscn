@@ -26,7 +26,7 @@ position = Vector2(246, 168)
 texture = ExtResource("3_158mb")
 
 [node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=1767232414]
-repeat_size = Vector2(500, 0)
+repeat_size = Vector2(350, 0)
 autoscroll = Vector2(100, 0)
 repeat_times = 5
 

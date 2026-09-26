@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bu58oumhtvfo5" path="res://Graphics/Interior/desk-chair.png" id="7_i3eo0"]
 [ext_resource type="Texture2D" uid="uid://0ma7nepncbg8" path="res://Graphics/Interior/mug.png" id="8_ndt06"]
 [ext_resource type="Script" uid="uid://cjfos3n1cmvu4" path="res://Scripts/HeroCat.gd" id="9_4ytjt"]
+[ext_resource type="Texture2D" uid="uid://by3psearidhup" path="res://Graphics/Characters/bed.png" id="9_weeyf"]
 [ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="10_4ytjt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hw515"]
@@ -57,6 +58,9 @@ size = Vector2(59, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e78ct"]
 size = Vector2(19, 49)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o05n3"]
+size = Vector2(59, 121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
 size = Vector2(25, 8)
@@ -223,34 +227,44 @@ shape = SubResource("RectangleShape2D_0vkqu")
 
 [node name="Furniture" type="TileMapLayer" parent="." unique_id=1862679663]
 
-[node name="WoodDesk" type="Sprite2D" parent="." unique_id=2135215725]
+[node name="WoodDesk" type="Sprite2D" parent="Furniture" unique_id=2135215725]
 position = Vector2(320, 290)
 texture = ExtResource("5_4ytjt")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="WoodDesk" unique_id=684877721]
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture/WoodDesk" unique_id=684877721]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WoodDesk/StaticBody2D" unique_id=1948939232]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/WoodDesk/StaticBody2D" unique_id=1948939232]
 position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_5ltfr")
 
-[node name="DesktopComputer" type="Sprite2D" parent="." unique_id=1062404772]
-position = Vector2(330, 278)
-texture = ExtResource("6_weeyf")
-
-[node name="DeskChair" type="Sprite2D" parent="." unique_id=2102293045]
-position = Vector2(312, 304)
-texture = ExtResource("7_i3eo0")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="DeskChair" unique_id=988950829]
-position = Vector2(0.5, -2.5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DeskChair/StaticBody2D" unique_id=2002027435]
-shape = SubResource("RectangleShape2D_e78ct")
-
-[node name="Mug" type="Sprite2D" parent="." unique_id=283110079]
+[node name="Mug" type="Sprite2D" parent="Furniture" unique_id=283110079]
 position = Vector2(347.00003, 285.00003)
 scale = Vector2(0.4375, 0.4375)
 texture = ExtResource("8_ndt06")
+
+[node name="DesktopComputer" type="Sprite2D" parent="Furniture" unique_id=1062404772]
+position = Vector2(330, 278)
+texture = ExtResource("6_weeyf")
+
+[node name="DeskChair" type="Sprite2D" parent="Furniture" unique_id=2102293045]
+position = Vector2(311, 305)
+texture = ExtResource("7_i3eo0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture/DeskChair" unique_id=988950829]
+position = Vector2(0.5, -2.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/DeskChair/StaticBody2D" unique_id=2002027435]
+shape = SubResource("RectangleShape2D_e78ct")
+
+[node name="Bed" type="Sprite2D" parent="Furniture" unique_id=1064957388]
+position = Vector2(192, 341)
+texture = ExtResource("9_weeyf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture/Bed" unique_id=224228059]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Bed/StaticBody2D" unique_id=1650010389]
+position = Vector2(-0.5, -1.5)
+shape = SubResource("RectangleShape2D_o05n3")
 
 [node name="HeroCat" type="CharacterBody2D" parent="." unique_id=309166348]
 motion_mode = 1
