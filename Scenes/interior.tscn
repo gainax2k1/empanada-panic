@@ -247,7 +247,7 @@ position = Vector2(330, 278)
 texture = ExtResource("6_weeyf")
 
 [node name="DeskChair" type="Sprite2D" parent="Furniture" unique_id=2102293045]
-position = Vector2(311, 305)
+position = Vector2(333, 306)
 texture = ExtResource("7_i3eo0")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Furniture/DeskChair" unique_id=988950829]

@@ -76,5 +76,5 @@ position = Vector2(890, -3)
 sprite_frames = SubResource("SpriteFrames_ga5kc")
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" unique_id=1914069528]
-position = Vector2(1, 18)
+position = Vector2(1, 19)
 zoom = Vector2(1.5, 1.5)
