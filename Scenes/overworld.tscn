@@ -9,12 +9,22 @@
 [ext_resource type="Texture2D" uid="uid://sojnrwfmw6v3" path="res://Graphics/Exterior/cloud_large.png" id="7_2ngsa"]
 [ext_resource type="Script" uid="uid://k0uecbp32gui" path="res://Scenes/collision_shape_2d.gd" id="7_auytq"]
 [ext_resource type="PackedScene" uid="uid://boa27xto1f7s1" path="res://Scenes/hero_cat.tscn" id="8_2ngsa"]
+[ext_resource type="Script" uid="uid://0aewq1xpihbt" path="res://Scenes/shop_door_collision.gd" id="9_c0h7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ltfr"]
+size = Vector2(1961, 149)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
 size = Vector2(14, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e78ct"]
 size = Vector2(129, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0vkqu"]
+size = Vector2(145, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o05n3"]
+size = Vector2(17, 6)
 
 [node name="Overworld" type="Node2D" unique_id=1074243832]
 script = ExtResource("1_l45s6")
@@ -52,6 +62,12 @@ tile_set = ExtResource("2_6s5ae")
 position = Vector2(598, 556)
 texture = ExtResource("3_4qj6l")
 
+[node name="StaticSky" type="StaticBody2D" parent="ExteriorMap" unique_id=1622687750]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExteriorMap/StaticSky" unique_id=183938488]
+position = Vector2(1117.5, 276)
+shape = SubResource("RectangleShape2D_5ltfr")
+
 [node name="Label" type="Label" parent="." unique_id=55633309]
 offset_left = 431.0
 offset_top = 292.0
@@ -80,7 +96,21 @@ shape = SubResource("RectangleShape2D_e78ct")
 position = Vector2(486, 18)
 texture = ExtResource("4_s368d")
 
+[node name="ShopCollision" type="StaticBody2D" parent="ShopOutside" unique_id=728369762]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShopOutside/ShopCollision" unique_id=727465732]
+position = Vector2(0.5, 13)
+shape = SubResource("RectangleShape2D_0vkqu")
+
+[node name="ShopDoor" type="Area2D" parent="ShopOutside" unique_id=1931761378]
+
+[node name="ShopDoorCollision" type="CollisionShape2D" parent="ShopOutside/ShopDoor" unique_id=1151834601]
+position = Vector2(20.5, 49)
+shape = SubResource("RectangleShape2D_o05n3")
+script = ExtResource("9_c0h7r")
+
 [node name="HeroCat" parent="." unique_id=1325555174 instance=ExtResource("8_2ngsa")]
 position = Vector2(483, -307)
 
 [connection signal="body_entered" from="HomeOutside/HomeDoor" to="HomeOutside/HomeDoor/CollisionShape2D" method="_on_home_door_body_entered"]
+[connection signal="body_shape_entered" from="ShopOutside/ShopDoor" to="ShopOutside/ShopDoor/ShopDoorCollision" method="_on_shop_door_body_shape_entered"]

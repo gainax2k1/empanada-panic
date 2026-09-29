@@ -2,6 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://bnnnrtg0e8oqy" path="res://Graphics/Exterior/world_map_spritesheet-Sheet.png" id="1_465dq"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_465dq"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_465dq"]
+vertices = PackedVector2Array(16, 16, -16, 16, -16, -16, 16, -16)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)])
+agent_radius = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8gr5"]
 texture = ExtResource("1_465dq")
 texture_region_size = Vector2i(32, 32)
@@ -21,16 +29,21 @@ texture_region_size = Vector2i(32, 32)
 2:4/0 = 0
 2:4/0/terrain_set = 0
 1:2/0 = 0
-0:6/0 = 0
-1:7/0 = 0
-1:6/0 = 0
-0:7/0 = 0
-0:5/0 = 0
-0:4/0 = 0
 2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.426601, -4.779463, 13.063858, -4.4608307, 13.063858, 6.691244, -12.745232, 5.4167233)
 2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.9657707, -16, 7.965767, -16, 3.186306, 7.6471386, 2.5490456, 22.941412, -1.9117851, 22.622782, -2.8676777, 7.965769)
 3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-7.6471405, -3.8235703, 9.240292, -4.1422005, 5.7353516, 8.603029, -4.4608326, 8.603029)
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.63726425, -9.558924, 0.95589066, -10.514816, 0.63726044, 9.877554, -0.9558945, 11.152075)
+0:4/size_in_atlas = Vector2i(1, 2)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-5.416725, -16, 4.779461, -16, 2.2304153, 20.710997, -2.2304173, 20.710997)
+0:6/size_in_atlas = Vector2i(2, 2)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-23.578678, -10.196184, 24.534565, -9.877554, 2.5490456, 26.127722, -4.4608326, 25.490461)
+0:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_465dq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6s5ae"]
 texture = ExtResource("1_465dq")
@@ -115,6 +128,8 @@ texture_region_size = Vector2i(32, 32)
 
 [resource]
 tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_465dq")
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(1, 0, 0, 1)
