@@ -7,18 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://cpuf8vjlol6ry" path="res://Graphics/Exterior/shop-outside.png" id="4_s368d"]
 [ext_resource type="Texture2D" uid="uid://cochiwby3hbtq" path="res://Graphics/Exterior/cloud_small.png" id="6_hf0oe"]
 [ext_resource type="Texture2D" uid="uid://sojnrwfmw6v3" path="res://Graphics/Exterior/cloud_large.png" id="7_2ngsa"]
-[ext_resource type="Texture2D" uid="uid://lpeuhmttedhh" path="res://Graphics/Characters/hero-cat.png" id="8_2ngsa"]
+[ext_resource type="Script" uid="uid://k0uecbp32gui" path="res://Scenes/collision_shape_2d.gd" id="7_auytq"]
+[ext_resource type="PackedScene" uid="uid://boa27xto1f7s1" path="res://Scenes/hero_cat.tscn" id="8_2ngsa"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ga5kc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_2ngsa")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
+size = Vector2(14, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e78ct"]
+size = Vector2(129, 64)
 
 [node name="Overworld" type="Node2D" unique_id=1074243832]
 script = ExtResource("1_l45s6")
@@ -67,14 +63,24 @@ text = "OVERWORLD MAP"
 position = Vector2(890, -45)
 texture = ExtResource("3_i8gr5")
 
+[node name="HomeDoor" type="Area2D" parent="HomeOutside" unique_id=1483850927]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeOutside/HomeDoor" unique_id=1931058449]
+position = Vector2(0, 48)
+shape = SubResource("RectangleShape2D_ga5kc")
+script = ExtResource("7_auytq")
+
+[node name="HomeCollision" type="StaticBody2D" parent="HomeOutside" unique_id=1819293312]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HomeOutside/HomeCollision" unique_id=403017323]
+position = Vector2(1.5, 10)
+shape = SubResource("RectangleShape2D_e78ct")
+
 [node name="ShopOutside" type="Sprite2D" parent="." unique_id=1847842610]
 position = Vector2(486, 18)
 texture = ExtResource("4_s368d")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1437745931]
-position = Vector2(890, -3)
-sprite_frames = SubResource("SpriteFrames_ga5kc")
+[node name="HeroCat" parent="." unique_id=1325555174 instance=ExtResource("8_2ngsa")]
+position = Vector2(483, -307)
 
-[node name="Camera2D" type="Camera2D" parent="AnimatedSprite2D" unique_id=1914069528]
-position = Vector2(1, 19)
-zoom = Vector2(1.5, 1.5)
+[connection signal="body_entered" from="HomeOutside/HomeDoor" to="HomeOutside/HomeDoor/CollisionShape2D" method="_on_home_door_body_entered"]

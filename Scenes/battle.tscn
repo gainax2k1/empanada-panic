@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://sojnrwfmw6v3" path="res://Graphics/Exterior/cloud_large.png" id="3_1otgo"]
 [ext_resource type="Texture2D" uid="uid://ds116irwm54p5" path="res://Graphics/Battle/Mushroom.png" id="4_pd5xk"]
 [ext_resource type="Texture2D" uid="uid://hwa5tm61eryd" path="res://Graphics/Battle/Onion.png" id="5_f6xt6"]
+[ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="7_ww2ai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6xt6"]
 texture = ExtResource("2_f6xt6")
@@ -98,6 +99,21 @@ texture = ExtResource("2_f6xt6")
 [sub_resource type="TileSet" id="TileSet_qeyqd"]
 sources/0 = SubResource("TileSetAtlasSource_ww2ai")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrv64"]
+atlas = ExtResource("7_ww2ai")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ga5kc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrv64")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Battle" type="Node2D" unique_id=1766313817]
 script = ExtResource("1_w7k78")
 
@@ -153,9 +169,63 @@ texture = ExtResource("3_1otgo")
 anchor_mode = 0
 
 [node name="Mushroom" type="Sprite2D" parent="." unique_id=99114000]
-position = Vector2(406, 475)
+position = Vector2(511.5, 409.5)
+scale = Vector2(2.578125, 2.578125)
 texture = ExtResource("4_pd5xk")
 
 [node name="Onion" type="Sprite2D" parent="." unique_id=1824697257]
-position = Vector2(299, 474)
+position = Vector2(328.5, 442.5)
+scale = Vector2(3.140625, 3.140625)
 texture = ExtResource("5_f6xt6")
+
+[node name="NarrationPanel" type="Panel" parent="." unique_id=1992471453]
+offset_left = 255.0
+offset_top = 28.0
+offset_right = 892.0
+offset_bottom = 94.0
+
+[node name="MarginContainer" type="MarginContainer" parent="NarrationPanel" unique_id=1182843405]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="NarrationText" type="RichTextLabel" parent="NarrationPanel/MarginContainer" unique_id=2019296491]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "This is my testing battle dialog"
+
+[node name="BattleMenu" type="Panel" parent="." unique_id=1339017253]
+offset_left = 88.0
+offset_top = 433.0
+offset_right = 222.0
+offset_bottom = 593.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleMenu" unique_id=1897185208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(10, 10)
+pivot_offset_ratio = Vector2(-10, -10)
+
+[node name="ItemList" type="ItemList" parent="BattleMenu/MarginContainer" unique_id=357398726]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+item_count = 3
+item_0/text = "Attack"
+item_1/text = "Magic"
+item_2/text = "Item"
+
+[node name="HeroCat" type="AnimatedSprite2D" parent="." unique_id=723125548]
+position = Vector2(867, 513)
+scale = Vector2(6.78125, 6.78125)
+sprite_frames = SubResource("SpriteFrames_ga5kc")

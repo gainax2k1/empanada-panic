@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://boa27xto1f7s1"]
+
+[ext_resource type="Script" uid="uid://cjfos3n1cmvu4" path="res://Scripts/HeroCat.gd" id="1_cmer4"]
+[ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="2_o4hi2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
+size = Vector2(25, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_weeyf"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3eo0"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(0, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw515"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(0, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fesy0"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(0, 192, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g117r"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_575xr"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(64, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rr08r"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(64, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n1yy"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(64, 192, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amk3b"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d42j"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(96, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cucn4"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(96, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmpqy"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(96, 192, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhj6u"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_247wb"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(32, 64, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew5rc"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(32, 128, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amt25"]
+atlas = ExtResource("2_o4hi2")
+region = Rect2(32, 192, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ga5kc"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_weeyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3eo0")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_hw515")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fesy0")
+}],
+"loop": 1,
+"name": &"Facing-Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g117r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_575xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rr08r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n1yy")
+}],
+"loop": 1,
+"name": &"Facing-Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amk3b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d42j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cucn4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmpqy")
+}],
+"loop": 1,
+"name": &"Facing-Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_hhj6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_247wb")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ew5rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amt25")
+}],
+"loop": 1,
+"name": &"Facing-Up",
+"speed": 5.0
+}]
+
+[node name="HeroCat" type="CharacterBody2D" unique_id=1325555174]
+motion_mode = 1
+script = ExtResource("1_cmer4")
+
+[node name="HeroCollision" type="CollisionShape2D" parent="." unique_id=1669554303]
+position = Vector2(406.5, 320)
+shape = SubResource("RectangleShape2D_ga5kc")
+
+[node name="HeroCatBig" type="AnimatedSprite2D" parent="." unique_id=1081288415]
+position = Vector2(407, 293)
+sprite_frames = SubResource("SpriteFrames_ga5kc")
+animation = &"Facing-Down"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1852814937]
+position = Vector2(409, 300)
+zoom = Vector2(2, 2)

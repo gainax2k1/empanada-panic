@@ -22,4 +22,3 @@ script = ExtResource("1_oj352")
 stream = SubResource("AudioStreamOggVorbis_oj352")
 
 [node name="SceneTransitionRect" parent="." unique_id=215802461 instance=ExtResource("2_e5fcp")]
-top_level = true
