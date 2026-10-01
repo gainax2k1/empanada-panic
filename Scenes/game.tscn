@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://bs2t46vpj3p5x"]
 
+[ext_resource type="Script" uid="uid://djwr4ivxbp0w4" path="res://Scenes/game.gd" id="1_wowpa"]
 [ext_resource type="PackedScene" uid="uid://1h6ur6l3yqmt" path="res://Scenes/battle.tscn" id="1_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://dpcv6kh48x6qu" path="res://Scenes/menu.tscn" id="2_3dryh"]
 [ext_resource type="PackedScene" uid="uid://hw0ebeffof7r" path="res://Scenes/overworld.tscn" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://cclgd4gygbjx8" path="res://Scenes/interior.tscn" id="4_3dryh"]
 
 [node name="Game" type="Node2D" unique_id=291622889]
+script = ExtResource("1_wowpa")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=766391633]
 anchor_mode = 0

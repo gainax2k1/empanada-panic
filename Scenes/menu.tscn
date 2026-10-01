@@ -4,17 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://sojnrwfmw6v3" path="res://Graphics/Exterior/cloud_large.png" id="2_cayip"]
 [ext_resource type="AudioStream" uid="uid://ccncwl5qvdfn3" path="res://Audio/Sfx/Click.ogg" id="2_xhh6f"]
 [ext_resource type="Texture2D" uid="uid://cochiwby3hbtq" path="res://Graphics/Exterior/cloud_small.png" id="3_158mb"]
+[ext_resource type="Texture2D" uid="uid://tjek3jv0q7vh" path="res://Graphics/empanada-big.png" id="5_wwsa2"]
 
 [node name="Menu" type="Node2D" unique_id=1398596061]
 script = ExtResource("1_1rerr")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1778738988]
-offset_left = 361.0
-offset_top = 204.0
-offset_right = 793.0
-offset_bottom = 291.0
-theme_override_font_sizes/normal_font_size = 51
-text = "Empanada Panic!"
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1871145604]
 repeat_size = Vector2(200, 0)
@@ -36,33 +29,38 @@ texture = ExtResource("2_cayip")
 
 [node name="Foreground" type="TileMapLayer" parent="." unique_id=798714591]
 
+[node name="EmpanadaBig" type="Sprite2D" parent="Foreground" unique_id=63105244]
+position = Vector2(412, 354)
+scale = Vector2(1.4101563, 1.4101563)
+texture = ExtResource("5_wwsa2")
+
 [node name="Link_Button" type="LinkButton" parent="." unique_id=1812684263]
-offset_left = 356.0
-offset_top = 506.0
-offset_right = 774.0
-offset_bottom = 564.0
+offset_left = 357.0
+offset_top = 581.0
+offset_right = 775.0
+offset_bottom = 639.0
 text = "Check out my other games!  https://gainax2k1.itch.io/"
 uri = "\"https://gainax2k1.itch.io/\""
 
 [node name="Start_Button" type="Button" parent="." unique_id=337570640]
-offset_left = 507.0
-offset_top = 295.0
-offset_right = 642.0
-offset_bottom = 343.0
+offset_left = 819.0
+offset_top = 214.0
+offset_right = 1035.5625
+offset_bottom = 291.0
 text = "Start!"
 
 [node name="Quit_Buton" type="Button" parent="." unique_id=1837823345]
-offset_left = 510.0
-offset_top = 444.0
-offset_right = 639.0
-offset_bottom = 482.0
+offset_left = 856.0
+offset_top = 401.0
+offset_right = 985.0
+offset_bottom = 439.0
 text = "Quit"
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=866213702]
-offset_left = 510.0
-offset_top = 354.0
-offset_right = 638.0
-offset_bottom = 385.0
+offset_left = 839.0
+offset_top = 313.0
+offset_right = 1014.0
+offset_bottom = 344.0
 alignment = 1
 selected = 0
 item_count = 2
@@ -75,10 +73,10 @@ popup/item_1/id = 1
 stream = ExtResource("2_xhh6f")
 
 [node name="Music_Toggle" type="CheckButton" parent="." unique_id=1105857687]
-offset_left = 521.0
-offset_top = 400.0
-offset_right = 619.0
-offset_bottom = 431.0
+offset_left = 875.0
+offset_top = 360.0
+offset_right = 973.0
+offset_bottom = 391.0
 button_pressed = true
 text = "Music "
 

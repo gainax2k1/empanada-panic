@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Empanada Panic"
-run/main_scene="uid://bs2t46vpj3p5x"
+run/main_scene="uid://dpcv6kh48x6qu"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

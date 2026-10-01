@@ -1,6 +1,5 @@
 extends Node2D
 
-#@onready var game_manager = get_node("GameManager") 
 
 func _ready() -> void:
 	GameManager.bg_music_play("")

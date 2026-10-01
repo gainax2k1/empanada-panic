@@ -9,7 +9,9 @@ func _ready() -> void:
 
 func transition_to(target_path : String) -> void:
 	$AnimationPlayer.play("Fade")
+	print("next scen path: ", next_scene_path)
 	next_scene_path = target_path
+	print("target scene path: ", target_path)
 	await $AnimationPlayer.animation_finished
 	get_tree().change_scene_to_file(next_scene_path)
 	$AnimationPlayer.play_backwards("Fade")

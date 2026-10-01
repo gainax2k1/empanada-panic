@@ -41,7 +41,8 @@ _data = {
 
 [node name="SceneTransitionRect" type="ColorRect" unique_id=215802461]
 top_level = true
-z_index = 1
+visibility_layer = 1023
+z_index = 7
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

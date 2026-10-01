@@ -62,7 +62,7 @@ size = Vector2(19, 49)
 size = Vector2(59, 121)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_683sr"]
-size = Vector2(20, 10.738464)
+size = Vector2(20, 4.0923004)
 
 [node name="Interior" type="Node2D" unique_id=668433556]
 script = ExtResource("1_bxmwn")
@@ -79,7 +79,6 @@ tile_map_data = PackedByteArray("AAAIABIAAgAAAAAAAAAJABIAAgAAAAAAAAAKABIAAgAAAAA
 tile_set = SubResource("TileSet_ga5kc")
 
 [node name="WallsStaticBodies" type="StaticBody2D" parent="WallCarpet" unique_id=1334009716]
-visible = false
 
 [node name="BackWall" type="CollisionShape2D" parent="WallCarpet/WallsStaticBodies" unique_id=124141446]
 position = Vector2(570.5, 146)
@@ -139,6 +138,7 @@ position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_o05n3")
 
 [node name="HeroCat" parent="." unique_id=1325555174 instance=ExtResource("10_i3eo0")]
+position = Vector2(0, 56)
 
 [node name="Door" type="Sprite2D" parent="." unique_id=497893087]
 modulate = Color(1, 1, 1, 0.60784316)
@@ -150,7 +150,7 @@ texture = ExtResource("12_i3eo0")
 position = Vector2(0.36923218, -0.73846436)
 
 [node name="LeaveHome" type="CollisionShape2D" parent="Door/Area2D" unique_id=539178287]
-position = Vector2(-1.1076965, 12.353851)
+position = Vector2(-1.1076965, 9.030777)
 shape = SubResource("RectangleShape2D_683sr")
 script = ExtResource("13_hw515")
 
