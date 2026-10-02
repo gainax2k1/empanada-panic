@@ -8,6 +8,7 @@
 
 [node name="Menu" type="Node2D" unique_id=1398596061]
 script = ExtResource("1_1rerr")
+metadata/_edit_vertical_guides_ = [877.0]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1871145604]
 repeat_size = Vector2(200, 0)
@@ -16,6 +17,10 @@ repeat_times = 9
 
 [node name="CloudsFar" type="Sprite2D" parent="Parallax2D" unique_id=1956417809]
 position = Vector2(246, 168)
+texture = ExtResource("3_158mb")
+
+[node name="CloudsFar2" type="Sprite2D" parent="Parallax2D" unique_id=2098635826]
+position = Vector2(347, 440)
 texture = ExtResource("3_158mb")
 
 [node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=1767232414]
@@ -27,40 +32,48 @@ repeat_times = 5
 position = Vector2(254, 72)
 texture = ExtResource("2_cayip")
 
+[node name="CloudsNear2" type="Sprite2D" parent="ParallaxBackground" unique_id=778650063]
+position = Vector2(139, 562)
+texture = ExtResource("2_cayip")
+
 [node name="Foreground" type="TileMapLayer" parent="." unique_id=798714591]
 
 [node name="EmpanadaBig" type="Sprite2D" parent="Foreground" unique_id=63105244]
-position = Vector2(412, 354)
+position = Vector2(431.99997, 301)
 scale = Vector2(1.4101563, 1.4101563)
 texture = ExtResource("5_wwsa2")
 
 [node name="Link_Button" type="LinkButton" parent="." unique_id=1812684263]
-offset_left = 357.0
-offset_top = 581.0
-offset_right = 775.0
-offset_bottom = 639.0
-text = "Check out my other games!  https://gainax2k1.itch.io/"
+offset_left = 479.0
+offset_top = 603.0
+offset_right = 639.0
+offset_bottom = 656.0
+theme_override_font_sizes/font_size = 27
+text = "@gainax2k1"
 uri = "\"https://gainax2k1.itch.io/\""
 
 [node name="Start_Button" type="Button" parent="." unique_id=337570640]
-offset_left = 819.0
-offset_top = 214.0
-offset_right = 1035.5625
-offset_bottom = 291.0
+offset_left = 832.0
+offset_top = 180.0
+offset_right = 1024.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.9920624, 0.0008141798, 0.99205524, 1)
+theme_override_font_sizes/font_size = 44
 text = "Start!"
 
 [node name="Quit_Buton" type="Button" parent="." unique_id=1837823345]
-offset_left = 856.0
-offset_top = 401.0
-offset_right = 985.0
-offset_bottom = 439.0
+offset_left = 879.0
+offset_top = 346.0
+offset_right = 961.0
+offset_bottom = 377.0
 text = "Quit"
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=866213702]
-offset_left = 839.0
-offset_top = 313.0
-offset_right = 1014.0
-offset_bottom = 344.0
+offset_left = 857.0
+offset_top = 270.0
+offset_right = 1032.0
+offset_bottom = 301.0
+flat = true
 alignment = 1
 selected = 0
 item_count = 2
@@ -73,12 +86,13 @@ popup/item_1/id = 1
 stream = ExtResource("2_xhh6f")
 
 [node name="Music_Toggle" type="CheckButton" parent="." unique_id=1105857687]
-offset_left = 875.0
-offset_top = 360.0
-offset_right = 973.0
-offset_bottom = 391.0
+offset_left = 872.0
+offset_top = 306.0
+offset_right = 970.0
+offset_bottom = 337.0
 button_pressed = true
 text = "Music "
+icon_alignment = 1
 
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Quit_Buton" to="." method="_on_quit_buton_pressed"]
