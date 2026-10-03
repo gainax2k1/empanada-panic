@@ -44,7 +44,7 @@ sources/3 = SubResource("TileSetAtlasSource_575xr")
 size = Vector2(1159, 314)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7ugm"]
-size = Vector2(955, 216)
+size = Vector2(955, 234)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5ini"]
 size = Vector2(144, 530)
@@ -85,7 +85,7 @@ position = Vector2(570.5, 146)
 shape = SubResource("RectangleShape2D_0vkqu")
 
 [node name="FrontWall" type="CollisionShape2D" parent="WallCarpet/WallsStaticBodies" unique_id=1591433829]
-position = Vector2(463.5, 585)
+position = Vector2(463.5, 576)
 shape = SubResource("RectangleShape2D_t7ugm")
 
 [node name="LeftWall" type="CollisionShape2D" parent="WallCarpet/WallsStaticBodies" unique_id=767777406]
@@ -150,7 +150,7 @@ texture = ExtResource("12_i3eo0")
 position = Vector2(0.36923218, -0.73846436)
 
 [node name="LeaveHome" type="CollisionShape2D" parent="Door/Area2D" unique_id=539178287]
-position = Vector2(-1.1076965, 9.030777)
+position = Vector2(-1.1076965, 10.507706)
 shape = SubResource("RectangleShape2D_683sr")
 script = ExtResource("13_hw515")
 

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="2_o4hi2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
-size = Vector2(25, 8)
+size = Vector2(25, 10)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weeyf"]
 atlas = ExtResource("2_o4hi2")
@@ -146,10 +146,12 @@ motion_mode = 1
 script = ExtResource("1_cmer4")
 
 [node name="HeroCollision" type="CollisionShape2D" parent="." unique_id=1669554303]
-position = Vector2(406.5, 320)
+y_sort_enabled = true
+position = Vector2(406.5, 319)
 shape = SubResource("RectangleShape2D_ga5kc")
 
 [node name="HeroCatBig" type="AnimatedSprite2D" parent="." unique_id=1081288415]
+y_sort_enabled = true
 position = Vector2(407, 293)
 sprite_frames = SubResource("SpriteFrames_ga5kc")
 animation = &"Facing-Down"
