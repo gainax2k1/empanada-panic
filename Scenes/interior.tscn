@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://b3yepppvi5ec" path="res://Graphics/Interior/Door.png" id="12_i3eo0"]
 [ext_resource type="Script" uid="uid://h0j8c873dea0" path="res://Scenes/leave_home.gd" id="13_hw515"]
 [ext_resource type="Texture2D" uid="uid://cxx7806mqcybv" path="res://Graphics/Interior/meds.png" id="14_fesy0"]
+[ext_resource type="Texture2D" uid="uid://doeseg5vuj0yw" path="res://Graphics/Interior/meds-reminder-eng.png" id="15_g117r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hw515"]
 texture = ExtResource("2_tvrgx")
@@ -160,7 +161,11 @@ position = Vector2(481, 319)
 texture = ExtResource("5_4ytjt")
 
 [node name="Meds" type="Sprite2D" parent="." unique_id=471299579]
-position = Vector2(462, 305)
+position = Vector2(488, 298)
 texture = ExtResource("14_fesy0")
+
+[node name="MedsReminderEng" type="Sprite2D" parent="." unique_id=1260042997]
+position = Vector2(442, 264)
+texture = ExtResource("15_g117r")
 
 [connection signal="body_entered" from="Door/Area2D" to="Door/Area2D/LeaveHome" method="_on_area_2d_body_entered"]
