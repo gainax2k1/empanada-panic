@@ -9,10 +9,12 @@
 [ext_resource type="Texture2D" uid="uid://de7cwiatt2y2b" path="res://Graphics/Interior/desktop-coputer.png" id="6_weeyf"]
 [ext_resource type="Texture2D" uid="uid://cl2pvvc5m288g" path="res://Graphics/Interior/outlet.png" id="7_cucn4"]
 [ext_resource type="Texture2D" uid="uid://bu58oumhtvfo5" path="res://Graphics/Interior/desk-chair.png" id="7_i3eo0"]
+[ext_resource type="Texture2D" uid="uid://d0d56ypbok2tw" path="res://Graphics/Interior/power-cable.png" id="8_hhj6u"]
 [ext_resource type="Texture2D" uid="uid://cqfbrvuoo2vbo" path="res://Graphics/Interior/bedside-table.png" id="8_jmpqy"]
 [ext_resource type="Texture2D" uid="uid://0ma7nepncbg8" path="res://Graphics/Interior/mug.png" id="8_ndt06"]
 [ext_resource type="Texture2D" uid="uid://by3psearidhup" path="res://Graphics/Characters/bed.png" id="9_weeyf"]
 [ext_resource type="PackedScene" uid="uid://boa27xto1f7s1" path="res://Scenes/hero_cat.tscn" id="10_i3eo0"]
+[ext_resource type="Texture2D" uid="uid://bxfkakuha1ocf" path="res://Graphics/Interior/med-glow-Sheet.png" id="11_hhj6u"]
 [ext_resource type="Texture2D" uid="uid://b3yepppvi5ec" path="res://Graphics/Interior/Door.png" id="12_i3eo0"]
 [ext_resource type="Script" uid="uid://h0j8c873dea0" path="res://Scenes/leave_home.gd" id="13_hw515"]
 [ext_resource type="Texture2D" uid="uid://cxx7806mqcybv" path="res://Graphics/Interior/meds.png" id="14_fesy0"]
@@ -60,8 +62,59 @@ size = Vector2(144, 530)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxe0o"]
 size = Vector2(381, 408)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvu4a"]
+size = Vector2(62, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrjeb"]
+size = Vector2(62, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2uhnh"]
+size = Vector2(46.49756, 51.139404)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sueik"]
+size = Vector2(42, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
+size = Vector2(21.38861, 29.717682)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ltfr"]
 size = Vector2(59, 44)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_247wb"]
+atlas = ExtResource("11_hhj6u")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ew5rc"]
+atlas = ExtResource("11_hhj6u")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_amt25"]
+atlas = ExtResource("11_hhj6u")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2fx8"]
+atlas = ExtResource("11_hhj6u")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ga5kc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_247wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ew5rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_amt25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2fx8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e78ct"]
 size = Vector2(19, 49)
@@ -89,7 +142,7 @@ tile_set = SubResource("TileSet_ga5kc")
 [node name="WallsStaticBodies" type="StaticBody2D" parent="WallCarpet" unique_id=1334009716]
 
 [node name="BackWall" type="CollisionShape2D" parent="WallCarpet/WallsStaticBodies" unique_id=124141446]
-position = Vector2(570.5, 146)
+position = Vector2(554, 143)
 shape = SubResource("RectangleShape2D_0vkqu")
 
 [node name="FrontWall" type="CollisionShape2D" parent="WallCarpet/WallsStaticBodies" unique_id=1591433829]
@@ -106,32 +159,80 @@ shape = SubResource("RectangleShape2D_vxe0o")
 
 [node name="WallDecor" type="TileMapLayer" parent="." unique_id=192255042]
 
-[node name="MedsReminderEng" type="Sprite2D" parent="WallDecor" unique_id=1260042997]
-position = Vector2(442, 264)
+[node name="MedsReminder" type="Sprite2D" parent="WallDecor" unique_id=1260042997]
+position = Vector2(338, 240)
 texture = ExtResource("15_g117r")
 
 [node name="Outlet" type="Sprite2D" parent="WallDecor" unique_id=1542502962]
-position = Vector2(567, 279)
+position = Vector2(532, 279)
 texture = ExtResource("7_cucn4")
 
 [node name="Outlet2" type="Sprite2D" parent="WallDecor" unique_id=188237202]
 position = Vector2(267, 297)
 texture = ExtResource("7_cucn4")
 
+[node name="PowerCable" type="Sprite2D" parent="WallDecor/Outlet2" unique_id=1193815491]
+position = Vector2(15, 6)
+texture = ExtResource("8_hhj6u")
+
 [node name="Furniture" type="TileMapLayer" parent="." unique_id=1862679663]
+
+[node name="Kitchen" type="TileMapLayer" parent="Furniture" unique_id=2065839424]
+
+[node name="Cabinet3" type="Sprite2D" parent="Furniture/Kitchen" unique_id=243815197]
+position = Vector2(632, 301)
+texture = ExtResource("16_rr08r")
+
+[node name="Sink" type="Sprite2D" parent="Furniture/Kitchen/Cabinet3" unique_id=1308648005]
+position = Vector2(1, -11)
+texture = ExtResource("17_1n1yy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture/Kitchen/Cabinet3" unique_id=638109134]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Kitchen/Cabinet3/StaticBody2D" unique_id=1387742744]
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_jvu4a")
+
+[node name="Cabinet" type="Sprite2D" parent="Furniture/Kitchen" unique_id=246630439]
+position = Vector2(521, 301)
+texture = ExtResource("16_rr08r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture/Kitchen/Cabinet" unique_id=1934753946]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Kitchen/Cabinet/StaticBody2D" unique_id=493309016]
+position = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_lrjeb")
+
+[node name="Stove" type="Sprite2D" parent="Furniture/Kitchen" unique_id=1647963502]
+position = Vector2(577, 301)
+texture = ExtResource("18_1n1yy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture/Kitchen/Stove" unique_id=1550389005]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Kitchen/Stove/StaticBody2D" unique_id=1283110016]
+position = Vector2(-0.2487793, 3.4302979)
+shape = SubResource("RectangleShape2D_2uhnh")
+
+[node name="Fridge" type="Sprite2D" parent="Furniture/Kitchen" unique_id=2076520260]
+position = Vector2(691, 286)
+texture = ExtResource("21_hhj6u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture/Kitchen/Fridge" unique_id=816658615]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Kitchen/Fridge/StaticBody2D" unique_id=511570898]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_sueik")
 
 [node name="BedsideTable" type="Sprite2D" parent="Furniture" unique_id=1434177298]
 position = Vector2(245, 311)
 texture = ExtResource("8_jmpqy")
 
-[node name="WoodDesk2" type="Sprite2D" parent="Furniture" unique_id=1084881843]
-position = Vector2(455, 300)
-texture = ExtResource("5_4ytjt")
+[node name="StaticBody2D" type="StaticBody2D" parent="Furniture/BedsideTable" unique_id=351950728]
+position = Vector2(-2.3886108, -6.717682)
 
-[node name="Meds" type="Sprite2D" parent="Furniture/WoodDesk2" unique_id=471299579]
-position = Vector2(10.5, -8)
-scale = Vector2(0.3125, 0.3125)
-texture = ExtResource("14_fesy0")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/BedsideTable/StaticBody2D" unique_id=342520583]
+position = Vector2(0.6943054, 4.858856)
+shape = SubResource("RectangleShape2D_ga5kc")
 
 [node name="WoodDesk" type="Sprite2D" parent="Furniture" unique_id=2135215725]
 position = Vector2(320, 290)
@@ -142,6 +243,18 @@ texture = ExtResource("5_4ytjt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/WoodDesk/StaticBody2D" unique_id=1948939232]
 position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_5ltfr")
+
+[node name="MedGlow" type="AnimatedSprite2D" parent="Furniture/WoodDesk" unique_id=959854705]
+position = Vector2(28.500021, -0.99996555)
+scale = Vector2(0.687498, 0.49999756)
+sprite_frames = SubResource("SpriteFrames_ga5kc")
+autoplay = "default"
+frame_progress = 0.823371
+
+[node name="Meds" type="Sprite2D" parent="Furniture/WoodDesk" unique_id=471299579]
+position = Vector2(28.5, -0.45455933)
+scale = Vector2(0.3124988, 0.28408954)
+texture = ExtResource("14_fesy0")
 
 [node name="Mug" type="Sprite2D" parent="Furniture" unique_id=283110079]
 position = Vector2(343, 279.00003)
@@ -172,7 +285,7 @@ texture = ExtResource("9_weeyf")
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_o05n3")
 
-[node name="HeroCat" parent="." unique_id=1325555174 instance=ExtResource("10_i3eo0")]
+[node name="HeroCat" parent="Furniture" unique_id=1325555174 instance=ExtResource("10_i3eo0")]
 position = Vector2(0, 56)
 
 [node name="Door" type="Sprite2D" parent="." unique_id=497893087]
@@ -188,27 +301,5 @@ position = Vector2(0.36923218, -0.73846436)
 position = Vector2(-1.1076965, 10.507706)
 shape = SubResource("RectangleShape2D_683sr")
 script = ExtResource("13_hw515")
-
-[node name="Kitchen" type="TileMapLayer" parent="." unique_id=2065839424]
-
-[node name="Cabinet3" type="Sprite2D" parent="Kitchen" unique_id=243815197]
-position = Vector2(660, 301)
-texture = ExtResource("16_rr08r")
-
-[node name="Sink" type="Sprite2D" parent="Kitchen/Cabinet3" unique_id=1308648005]
-position = Vector2(1, -11)
-texture = ExtResource("17_1n1yy")
-
-[node name="Cabinet" type="Sprite2D" parent="Kitchen" unique_id=246630439]
-position = Vector2(548, 301)
-texture = ExtResource("16_rr08r")
-
-[node name="Stove" type="Sprite2D" parent="Kitchen" unique_id=1647963502]
-position = Vector2(604, 302)
-texture = ExtResource("18_1n1yy")
-
-[node name="Fridge" type="Sprite2D" parent="Kitchen" unique_id=2076520260]
-position = Vector2(717, 288)
-texture = ExtResource("21_hhj6u")
 
 [connection signal="body_entered" from="Door/Area2D" to="Door/Area2D/LeaveHome" method="_on_area_2d_body_entered"]

@@ -44,3 +44,10 @@ func _get_dialogue() -> Dialogue:
 func _get_line() -> DialogueLine:
 	return current_dialog.DialogueLines[current_idx]
 	 
+func get_lang() -> String:
+	if LANG == 0:
+		return "ENG"
+	elif LANG == 1:
+		return "ESP"
+	else:
+		return "ENG"
