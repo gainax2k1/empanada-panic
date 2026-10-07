@@ -5,9 +5,9 @@ func _ready() -> void:
 	GameManager.bg_music_play("")
 
 
-func _on_option_button_item_selected(index: int) -> void:
-	DialogManager.LANG = index
-	print("DialogManager LANG: ", index)
+func _on_option_button_item_selected(language_index: int) -> void:
+	DialogManager.set_lang(language_index)
+	print("DialogManager LANG: ", DialogManager.get_lang())
 	_click_sound()
 
 func _on_quit_buton_pressed() -> void:

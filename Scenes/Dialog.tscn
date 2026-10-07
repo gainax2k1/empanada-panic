@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bxtmppx2eou52"]
+
+[ext_resource type="Texture2D" uid="uid://btj7hj1vl601" path="res://Graphics/Dialog-box.png" id="1_0hepe"]
+[ext_resource type="Script" uid="uid://chm6wmkyl4tvh" path="res://Scripts/dialogBox.gd" id="1_0tpv1"]
+
+[node name="DialogBox" type="Control" unique_id=937173483]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_0tpv1")
+
+[node name="TextureRect" type="NinePatchRect" parent="." unique_id=2145674586]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -8.025001
+anchor_top = -1.6
+anchor_right = 7.9750004
+anchor_bottom = 1.6
+offset_left = 3.0517578e-05
+texture = ExtResource("1_0hepe")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=988162827]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+
+[node name="RTBox" type="RichTextLabel" parent="TextureRect/MarginContainer" unique_id=27715959]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.18452951, 7.70092e-07, 0.92098165, 1)
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+bbcode_enabled = true
+text = "This is my debugging [b]filler[/b] text
+"

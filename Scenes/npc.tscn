@@ -141,10 +141,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_247wb"]
 size = Vector2(50, 108)
 
-[node name="NPC" type="StaticBody2D" unique_id=1450346046 groups=["interactable"]]
+[node name="NPC" type="StaticBody2D" unique_id=1450346046]
 script = ExtResource("1_xxsvc")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=565393080]
+y_sort_enabled = true
 position = Vector2(-9.536743e-07, -2.002716e-05)
 scale = Vector2(3.5625, 3.5625)
 sprite_frames = SubResource("SpriteFrames_b0k6i")

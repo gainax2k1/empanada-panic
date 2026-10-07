@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
 const SPEED = 100.0
+var can_interact = false
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_select"):
-		print("ui_select pressed")  
+		print("ui_select pressed in herocat")  
+		if can_interact:
+			$DialogBox.visible = true
 
 func _physics_process(delta: float) -> void:
 	move_hero()
@@ -29,9 +32,14 @@ func move_hero():
 	
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("interactable"):
+	
+	if body.is_in_group("interactable") and body.can_interact:
+		can_interact = true
+		print(body.name)
 		print("hero-cat body entered for interactable")
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	can_interact = false
+	$DialogBox.visible = false
 	if body.is_in_group("interactable"):
 		print("hero-cat body exited for interactable")

@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjfos3n1cmvu4" path="res://Scripts/HeroCat.gd" id="1_cmer4"]
 [ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="2_o4hi2"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
-size = Vector2(25, 10)
+[ext_resource type="PackedScene" uid="uid://bxtmppx2eou52" path="res://Scenes/Dialog.tscn" id="3_o4hi2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weeyf"]
 atlas = ExtResource("2_o4hi2")
@@ -141,34 +139,50 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ga5kc"]
+size = Vector2(25, 10)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ga5kc"]
-radius = 18.0
+radius = 17.029387
 
 [node name="HeroCat" type="CharacterBody2D" unique_id=1325555174]
 motion_mode = 1
 script = ExtResource("1_cmer4")
 
-[node name="HeroCollision" type="CollisionShape2D" parent="." unique_id=1669554303]
-y_sort_enabled = true
-position = Vector2(406.5, 319)
-shape = SubResource("RectangleShape2D_ga5kc")
-
 [node name="HeroCatBig" type="AnimatedSprite2D" parent="." unique_id=1081288415]
 y_sort_enabled = true
-position = Vector2(407, 293)
+position = Vector2(-0.5000012, 3.2901764e-05)
+scale = Vector2(1.09375, 1.09375)
 sprite_frames = SubResource("SpriteFrames_ga5kc")
 animation = &"Facing-Down"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1852814937]
-position = Vector2(409, 300)
 zoom = Vector2(2, 2)
 
+[node name="HeroCollision" type="CollisionShape2D" parent="." unique_id=1669554303]
+y_sort_enabled = true
+position = Vector2(-0.5, 16)
+shape = SubResource("RectangleShape2D_ga5kc")
+
 [node name="Area2D" type="Area2D" parent="." unique_id=417706348]
+position = Vector2(0, 3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=941732025]
-position = Vector2(407, 306)
+position = Vector2(0, 11)
 shape = SubResource("CircleShape2D_ga5kc")
 debug_color = Color(0.88711774, 0.11630272, 0.7514378, 0.41960785)
+
+[node name="DialogBox" parent="." unique_id=937173483 instance=ExtResource("3_o4hi2")]
+visible = false
+custom_minimum_size = Vector2(20, 20)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 2.5
+offset_top = -96.0
+offset_right = 31.0
+offset_bottom = -63.18182
+grow_horizontal = 2
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

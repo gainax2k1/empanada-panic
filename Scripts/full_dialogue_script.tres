@@ -4,6 +4,18 @@
 [ext_resource type="Script" uid="uid://dxa4kqw3ojbq1" path="res://Scripts/Dialogue.gd" id="2_aw8ou"]
 [ext_resource type="Script" uid="uid://duyhhlpmunlok" path="res://Scripts/DialogScript.gd" id="2_mits7"]
 
+[sub_resource type="Resource" id="Resource_6fa4d"]
+script = ExtResource("1_mits7")
+SPKR_Name = "objname"
+SPKR_Icon = "objicon"
+SPKR_Line = Array[String](["objeng", "objspa"])
+metadata/_custom_type_script = "uid://c85ijcfyrxedo"
+
+[sub_resource type="Resource" id="Resource_aw8ou"]
+script = ExtResource("2_aw8ou")
+DialogueLines = Array[ExtResource("1_mits7")]([SubResource("Resource_6fa4d")])
+metadata/_custom_type_script = "uid://dxa4kqw3ojbq1"
+
 [sub_resource type="Resource" id="Resource_3dryh"]
 script = ExtResource("1_mits7")
 SPKR_Name = "testspkr1"
@@ -21,18 +33,6 @@ metadata/_custom_type_script = "uid://c85ijcfyrxedo"
 [sub_resource type="Resource" id="Resource_mits7"]
 script = ExtResource("2_aw8ou")
 DialogueLines = Array[ExtResource("1_mits7")]([SubResource("Resource_3dryh"), SubResource("Resource_qteyu")])
-metadata/_custom_type_script = "uid://dxa4kqw3ojbq1"
-
-[sub_resource type="Resource" id="Resource_6fa4d"]
-script = ExtResource("1_mits7")
-SPKR_Name = "objname"
-SPKR_Icon = "objicon"
-SPKR_Line = Array[String](["objeng", "objspa"])
-metadata/_custom_type_script = "uid://c85ijcfyrxedo"
-
-[sub_resource type="Resource" id="Resource_aw8ou"]
-script = ExtResource("2_aw8ou")
-DialogueLines = Array[ExtResource("1_mits7")]([SubResource("Resource_6fa4d")])
 metadata/_custom_type_script = "uid://dxa4kqw3ojbq1"
 
 [resource]
