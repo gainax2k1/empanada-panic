@@ -1,8 +1,6 @@
 extends Node2D
 
-@onready var game_manager = get_node("GameManager") 
-@onready var dialogue_manager =get_node("/root/DialogManager")
-@onready var lang = DialogManager.get_lang()
+@onready var lang : String = DialogManager.get_lang()
 
 func _ready() -> void:
 	DialogManager.set_dialogue("TEST_CONV")
@@ -16,5 +14,5 @@ func _ready() -> void:
 		$WallDecor/MedsReminder.texture = load("res://Graphics/Interior/meds-reminder-eng.png")
 	
 
-func interact():
-	DialogManager.get_line(1)
+#func interact():
+#	DialogManager.get_line(1)

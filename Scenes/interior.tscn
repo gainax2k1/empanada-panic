@@ -266,7 +266,7 @@ script = ExtResource("17_247wb")
 
 [node name="Artemis" parent="Furniture/WoodDesk/Meds" unique_id=1450346046 groups=["interactable"] instance=ExtResource("18_ew5rc")]
 position = Vector2(-244.80096, 142.4007)
-npc_dialog_idxs = Array[String](["TEST_CONV[0]"])
+npc_dialog_didxs = Array[String](["TEST_CONV"])
 
 [node name="Mug" type="Sprite2D" parent="Furniture" unique_id=283110079]
 position = Vector2(343, 279.00003)
