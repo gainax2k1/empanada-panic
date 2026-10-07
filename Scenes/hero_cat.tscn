@@ -141,6 +141,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ga5kc"]
+radius = 18.0
+
 [node name="HeroCat" type="CharacterBody2D" unique_id=1325555174]
 motion_mode = 1
 script = ExtResource("1_cmer4")
@@ -159,3 +162,13 @@ animation = &"Facing-Down"
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1852814937]
 position = Vector2(409, 300)
 zoom = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=417706348]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=941732025]
+position = Vector2(407, 306)
+shape = SubResource("CircleShape2D_ga5kc")
+debug_color = Color(0.88711774, 0.11630272, 0.7514378, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -39,6 +39,10 @@ folder_colors={
 "res://addons/": "gray"
 }
 
+[global_group]
+
+interactable="Something the player can interact with"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d0d56ypbok2tw" path="res://Graphics/Interior/power-cable.png" id="8_hhj6u"]
 [ext_resource type="Texture2D" uid="uid://cqfbrvuoo2vbo" path="res://Graphics/Interior/bedside-table.png" id="8_jmpqy"]
 [ext_resource type="Texture2D" uid="uid://0ma7nepncbg8" path="res://Graphics/Interior/mug.png" id="8_ndt06"]
-[ext_resource type="Texture2D" uid="uid://by3psearidhup" path="res://Graphics/Characters/bed.png" id="9_weeyf"]
+[ext_resource type="Texture2D" uid="uid://by3psearidhup" path="res://Graphics/Interior/bed.png" id="9_weeyf"]
 [ext_resource type="PackedScene" uid="uid://boa27xto1f7s1" path="res://Scenes/hero_cat.tscn" id="10_i3eo0"]
 [ext_resource type="Texture2D" uid="uid://bxfkakuha1ocf" path="res://Graphics/Interior/med-glow-Sheet.png" id="11_hhj6u"]
 [ext_resource type="Texture2D" uid="uid://b3yepppvi5ec" path="res://Graphics/Interior/Door.png" id="12_i3eo0"]
@@ -21,7 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://doeseg5vuj0yw" path="res://Graphics/Interior/meds-reminder-eng.png" id="15_g117r"]
 [ext_resource type="Texture2D" uid="uid://cdlxmvk7moxho" path="res://Graphics/Interior/cabinet.png" id="16_rr08r"]
 [ext_resource type="Texture2D" uid="uid://fdv631epfl0m" path="res://Graphics/Interior/sink.png" id="17_1n1yy"]
+[ext_resource type="Script" uid="uid://osab8irkeeqm" path="res://Scripts/meds_interact.gd" id="17_247wb"]
 [ext_resource type="Texture2D" uid="uid://ddeke48152nf5" path="res://Graphics/Interior/stove.png" id="18_1n1yy"]
+[ext_resource type="PackedScene" uid="uid://bgcjr3rnudfy8" path="res://Scenes/npc.tscn" id="18_ew5rc"]
 [ext_resource type="Texture2D" uid="uid://dmy33pr137d1m" path="res://Graphics/Interior/fridge.png" id="21_hhj6u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hw515"]
@@ -51,7 +53,7 @@ sources/2 = SubResource("TileSetAtlasSource_g117r")
 sources/3 = SubResource("TileSetAtlasSource_575xr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vkqu"]
-size = Vector2(1159, 314)
+size = Vector2(1159, 316)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t7ugm"]
 size = Vector2(955, 234)
@@ -116,6 +118,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xycnx"]
+size = Vector2(38.400223, 73.920265)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e78ct"]
 size = Vector2(19, 49)
 
@@ -142,7 +147,7 @@ tile_set = SubResource("TileSet_ga5kc")
 [node name="WallsStaticBodies" type="StaticBody2D" parent="WallCarpet" unique_id=1334009716]
 
 [node name="BackWall" type="CollisionShape2D" parent="WallCarpet/WallsStaticBodies" unique_id=124141446]
-position = Vector2(554, 143)
+position = Vector2(554, 144)
 shape = SubResource("RectangleShape2D_0vkqu")
 
 [node name="FrontWall" type="CollisionShape2D" parent="WallCarpet/WallsStaticBodies" unique_id=1591433829]
@@ -245,16 +250,29 @@ position = Vector2(0.5, 8)
 shape = SubResource("RectangleShape2D_5ltfr")
 
 [node name="MedGlow" type="AnimatedSprite2D" parent="Furniture/WoodDesk" unique_id=959854705]
+unique_name_in_owner = true
 position = Vector2(28.500021, -0.99996555)
 scale = Vector2(0.687498, 0.49999756)
 sprite_frames = SubResource("SpriteFrames_ga5kc")
 autoplay = "default"
-frame_progress = 0.823371
+frame_progress = 0.483056
 
-[node name="Meds" type="Sprite2D" parent="Furniture/WoodDesk" unique_id=471299579]
+[node name="Meds" type="Sprite2D" parent="Furniture/WoodDesk" unique_id=471299579 groups=["interactable"]]
 position = Vector2(28.5, -0.45455933)
 scale = Vector2(0.3124988, 0.28408954)
 texture = ExtResource("14_fesy0")
+
+[node name="Area2D" type="Area2D" parent="Furniture/WoodDesk/Meds" unique_id=1724367502 groups=["interactable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/WoodDesk/Meds/Area2D" unique_id=953519956 groups=["interactable"]]
+z_as_relative = false
+position = Vector2(27.200195, 91.360535)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_xycnx")
+script = ExtResource("17_247wb")
+
+[node name="NPC" parent="Furniture/WoodDesk/Meds" unique_id=1450346046 instance=ExtResource("18_ew5rc")]
+position = Vector2(-244.80096, 142.4007)
 
 [node name="Mug" type="Sprite2D" parent="Furniture" unique_id=283110079]
 position = Vector2(343, 279.00003)
@@ -287,6 +305,7 @@ shape = SubResource("RectangleShape2D_o05n3")
 
 [node name="HeroCat" parent="Furniture" unique_id=1325555174 instance=ExtResource("10_i3eo0")]
 position = Vector2(0, 56)
+collision_layer = 65535
 
 [node name="Door" type="Sprite2D" parent="." unique_id=497893087]
 modulate = Color(1, 1, 1, 0.60784316)
@@ -302,4 +321,6 @@ position = Vector2(-1.1076965, 10.507706)
 shape = SubResource("RectangleShape2D_683sr")
 script = ExtResource("13_hw515")
 
+[connection signal="body_entered" from="Furniture/WoodDesk/Meds/Area2D" to="Furniture/WoodDesk/Meds/Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]
+[connection signal="input_event" from="Furniture/WoodDesk/Meds/Area2D" to="Furniture/WoodDesk/Meds/Area2D/CollisionShape2D" method="_on_area_2d_input_event"]
 [connection signal="body_entered" from="Door/Area2D" to="Door/Area2D/LeaveHome" method="_on_area_2d_body_entered"]

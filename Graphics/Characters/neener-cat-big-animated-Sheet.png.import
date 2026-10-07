@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca63qhjb7qgkf"
-path="res://.godot/imported/trasht.png-4faf29936081ea950a74cb47802a3d5c.ctex"
+uid="uid://0h1fvbh424ve"
+path="res://.godot/imported/neener-cat-big-animated-Sheet.png-b10606375cdcbedcde3deeb89b377eb8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics/Characters/trasht.png"
-dest_files=["res://.godot/imported/trasht.png-4faf29936081ea950a74cb47802a3d5c.ctex"]
+source_file="res://Graphics/Characters/neener-cat-big-animated-Sheet.png"
+dest_files=["res://.godot/imported/neener-cat-big-animated-Sheet.png-b10606375cdcbedcde3deeb89b377eb8.ctex"]
 
 [params]
 
