@@ -1,7 +1,5 @@
 extends Node2D
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+func _ready() -> void: ## Autostarts menu titlescreen
 	GameManager.change_scene("res://Scenes/menu.tscn")
 	

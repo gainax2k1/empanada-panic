@@ -3,7 +3,7 @@ extends Node2D
 @onready var lang : String = DialogManager.get_lang()
 
 func _ready() -> void:
-	DialogManager.set_dialogue("TEST_CONV")
+	# UNNECCESSARY DialogManager.set_dialogue("TEST_CONV")
 	print("assign proper language sign")
 	
 	if lang == "ENG":
@@ -13,6 +13,3 @@ func _ready() -> void:
 	else:
 		$WallDecor/MedsReminder.texture = load("res://Graphics/Interior/meds-reminder-eng.png")
 	
-
-#func interact():
-#	DialogManager.get_line(1)

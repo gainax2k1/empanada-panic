@@ -264,10 +264,6 @@ scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_xycnx")
 script = ExtResource("17_247wb")
 
-[node name="Artemis" parent="Furniture/WoodDesk/Meds" unique_id=1450346046 groups=["interactable"] instance=ExtResource("18_ew5rc")]
-position = Vector2(-244.80096, 142.4007)
-npc_dialog_didxs = Array[String](["TEST_CONV"])
-
 [node name="Mug" type="Sprite2D" parent="Furniture" unique_id=283110079]
 position = Vector2(343, 279.00003)
 scale = Vector2(0.4375, 0.4375)
@@ -297,8 +293,15 @@ texture = ExtResource("9_weeyf")
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_o05n3")
 
+[node name="Artemis" parent="Furniture" unique_id=1450346046 groups=["interactable"] instance=ExtResource("18_ew5rc")]
+position = Vector2(272, 330)
+scale = Vector2(0.3124988, 0.28408954)
+NPC_dialog_didxs = Array[String](["TEST_CONV"])
+
 [node name="HeroCat" parent="Furniture" unique_id=1325555174 instance=ExtResource("10_i3eo0")]
-position = Vector2(399, 355)
+y_sort_enabled = true
+position = Vector2(399, 354.99997)
+scale = Vector2(1.0000001, 1)
 collision_layer = 65535
 
 [node name="Door" type="Sprite2D" parent="." unique_id=497893087]

@@ -1,16 +1,6 @@
 extends CollisionShape2D
 
-var meds_taken = false
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+var meds_taken = false ## Flag for check if meds have been taken
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 		print("meds area entered")
@@ -22,7 +12,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				meds_taken = true
 				print("I took my meds")
 				%MedGlow.visible = false
-
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	pass # Replace with function body.
