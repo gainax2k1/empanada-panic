@@ -304,6 +304,18 @@ position = Vector2(399, 354.99997)
 scale = Vector2(1.0000001, 1)
 collision_layer = 65535
 
+[node name="Cabinet" type="Sprite2D" parent="Furniture" unique_id=1786637238]
+position = Vector2(632, 223)
+texture = ExtResource("16_rr08r")
+
+[node name="Cabinet3" type="Sprite2D" parent="Furniture" unique_id=249287400]
+position = Vector2(577, 223)
+texture = ExtResource("16_rr08r")
+
+[node name="Cabinet2" type="Sprite2D" parent="Furniture/Cabinet3" unique_id=1007029493]
+position = Vector2(-57, 0)
+texture = ExtResource("16_rr08r")
+
 [node name="Door" type="Sprite2D" parent="." unique_id=497893087]
 modulate = Color(1, 1, 1, 0.60784316)
 position = Vector2(311, 425)
