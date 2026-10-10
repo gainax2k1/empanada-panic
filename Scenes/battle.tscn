@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://ds116irwm54p5" path="res://Graphics/Battle/Mushroom.png" id="4_pd5xk"]
 [ext_resource type="Texture2D" uid="uid://hwa5tm61eryd" path="res://Graphics/Battle/Onion.png" id="5_f6xt6"]
 [ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="7_ww2ai"]
+[ext_resource type="PackedScene" uid="uid://bxtmppx2eou52" path="res://Scenes/Dialog.tscn" id="8_lrv64"]
+[ext_resource type="AudioStream" uid="uid://ccncwl5qvdfn3" path="res://Audio/Sfx/Click.ogg" id="9_qeyqd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6xt6"]
 texture = ExtResource("2_f6xt6")
@@ -178,27 +180,6 @@ position = Vector2(328.5, 442.5)
 scale = Vector2(3.140625, 3.140625)
 texture = ExtResource("5_f6xt6")
 
-[node name="NarrationPanel" type="Panel" parent="." unique_id=1992471453]
-offset_left = 255.0
-offset_top = 28.0
-offset_right = 892.0
-offset_bottom = 94.0
-
-[node name="MarginContainer" type="MarginContainer" parent="NarrationPanel" unique_id=1182843405]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = -10.0
-offset_bottom = -10.0
-
-[node name="NarrationText" type="RichTextLabel" parent="NarrationPanel/MarginContainer" unique_id=2019296491]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 24
-text = "This is my testing battle dialog"
-
 [node name="BattleMenu" type="Panel" parent="." unique_id=1339017253]
 offset_left = 88.0
 offset_top = 433.0
@@ -229,3 +210,14 @@ item_2/text = "Item"
 position = Vector2(867, 513)
 scale = Vector2(6.78125, 6.78125)
 sprite_frames = SubResource("SpriteFrames_ga5kc")
+
+[node name="DialogBox" parent="." unique_id=937173483 instance=ExtResource("8_lrv64")]
+offset_left = 555.0
+offset_top = 142.0
+offset_right = 595.0
+offset_bottom = 182.0
+
+[node name="Button_Click" type="AudioStreamPlayer2D" parent="." unique_id=462154163]
+stream = ExtResource("9_qeyqd")
+
+[connection signal="item_selected" from="BattleMenu/MarginContainer/ItemList" to="." method="_on_item_list_item_selected"]

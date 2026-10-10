@@ -24,6 +24,11 @@ func set_dialogue(didx: String) -> void:
 	
 	#actually load the dialog by didx from full script
 	NPC_current_dialog = _get_dialogue() 
+	
+	# I believe everything below can be removed, or should be? verify doesn't 
+	# break regular dialog, would be nice to reuse as much as can between battle
+	# and regular dialog
+	
 	if NPC_current_dialog != null:
 		NPC_current_dialog_size = NPC_current_dialog.size()
 		print("current dialog size: ", NPC_current_dialog_size)
@@ -37,16 +42,11 @@ func set_dialogue(didx: String) -> void:
 		print("current line: ", NPC_current_dialog_line)
 		#whatever needs to happen, iterating through array, calling appropriate helper functions for icon, name,etc.
 
-func get_dialog_line() -> DialogueLine:
-	#var result = current_dialog_line
-	
-	#if current_dialog_line_idx+1 > current_dialog_size:
-		#failstate
-	#	print("invalid dialog line idx")
-	#else:
-	#	current_dialog_line_idx += 1
-	
-	return _get_line()
+func BAT_get_dialog_line(idx : int) -> DialogueLine: ## Recieves int idx for dialog line (0=atk, 1=mag, etc)
+	print("BAT get dialog line sent: ", idx)	
+	print("retrieved: ", NPC_current_dialog.DialogueLines[idx])
+	return NPC_current_dialog.DialogueLines[idx]
+
 
 func set_lang(lang:int) ->void: ## sets LANG, which is line idx for translation, 0 = eng, 1 = esp, etc...
 	LANG = lang
