@@ -24,13 +24,13 @@ func play_failure() -> void:
 func play_victory() -> void:
 	pass
 
-func _on_item_list_item_selected(index: int) -> void:
+func _on_item_list_item_selected(index: int) -> void: ## recieves the index of menu item selected
 	_click_sound()
 	print("index clicked: ", index)
 	battle_didx = battle_prefix_didx + str(battle_suffix_didx)
 	print("battle_didx: ", battle_didx)
-	$DialogBox.RunBattleDialog(battle_didx)
-	$DialogBox.BattleAction(index)
+	$DialogBox.RunBattleDialog(battle_didx) ## Sets BAT_## as current dialog in DM
+	$DialogBox.BattleAction(index) ## Pulls and displays menu choice (atk, magic, etc)
 	
 func _click_sound() -> void:
 	$Button_Click.play()
