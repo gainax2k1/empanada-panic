@@ -16,9 +16,7 @@ extends Node
 @onready var NPC_fs = load("res://Scripts/full_dialogue_script.tres")
 
 func set_dialogue(didx: String) -> void:
-	if didx in NPC_fs:
-		print("didx found in fs")
-		
+
 	NPC_current_dialog_didx = didx
 	NPC_current_dialog_line_idx = 0
 	
@@ -41,11 +39,6 @@ func set_dialogue(didx: String) -> void:
 		print("current_dialog_size: ", NPC_current_dialog_size)
 		print("current line: ", NPC_current_dialog_line)
 		#whatever needs to happen, iterating through array, calling appropriate helper functions for icon, name,etc.
-
-func BAT_get_dialog_line(idx : int) -> DialogueLine: ## Recieves int idx for dialog line (0=atk, 1=mag, etc)
-	print("BAT get dialog line sent: ", idx)	
-	print("retrieved: ", NPC_current_dialog.DialogueLines[idx])
-	return NPC_current_dialog.DialogueLines[idx]
 
 
 func set_lang(lang:int) ->void: ## sets LANG, which is line idx for translation, 0 = eng, 1 = esp, etc...

@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://hw0ebeffof7r"]
 
-[ext_resource type="Script" uid="uid://ckbnstlljo64f" path="res://Scripts/overworld.gd" id="1_l45s6"]
 [ext_resource type="TileSet" uid="uid://yldsf6tu22jq" path="res://Graphics/Exterior/exterior_tile_set.tres" id="2_6s5ae"]
 [ext_resource type="Texture2D" uid="uid://d26ll355a4gvq" path="res://Graphics/Exterior/friends-house-outside.png" id="3_4qj6l"]
 [ext_resource type="Texture2D" uid="uid://d1bin82xyb47v" path="res://Graphics/Exterior/home-outside.png" id="3_i8gr5"]
@@ -145,7 +144,6 @@ size = Vector2(145, 62)
 size = Vector2(17, 6)
 
 [node name="Overworld" type="Node2D" unique_id=1074243832]
-script = ExtResource("1_l45s6")
 
 [node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=1207384476]
 scroll_offset = Vector2(0, -254)
@@ -186,7 +184,7 @@ tile_set = ExtResource("2_6s5ae")
 [node name="StaticSky" type="StaticBody2D" parent="ExteriorMap" unique_id=1622687750]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExteriorMap/StaticSky" unique_id=183938488]
-position = Vector2(1117.5, 276)
+position = Vector2(1116.5, 277)
 shape = SubResource("RectangleShape2D_5ltfr")
 
 [node name="MapObjects" type="TileMapLayer" parent="ExteriorMap" unique_id=870846313]

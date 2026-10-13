@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="BattleScript" format=3 uid="uid://b8biavqkq0o5v"]
+
+[ext_resource type="Script" uid="uid://c16pc1bpl48ge" path="res://Scripts/BattleInstance.gd" id="1_tdjtp"]
+[ext_resource type="Script" uid="uid://cw1sm8bwu221e" path="res://Scripts/BattleScript.gd" id="4_cmbnh"]
+
+[resource]
+script = ExtResource("4_cmbnh")
+metadata/_custom_type_script = "uid://cw1sm8bwu221e"

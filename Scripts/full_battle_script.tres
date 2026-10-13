@@ -1,8 +1,31 @@
 [gd_resource type="Resource" script_class="BattleScript" format=3 uid="uid://bfvow6btxq5hf"]
 
 [ext_resource type="Script" uid="uid://c16pc1bpl48ge" path="res://Scripts/BattleInstance.gd" id="1_wxr1c"]
-[ext_resource type="Script" uid="uid://cw1sm8bwu221e" path="res://BattleScript.gd" id="2_exu4j"]
+[ext_resource type="Script" uid="uid://fe5wjrafnqkh" path="res://Scripts/BattleMenu.gd" id="2_emblb"]
+[ext_resource type="Script" uid="uid://cw1sm8bwu221e" path="res://Scripts/BattleScript.gd" id="2_wxr1c"]
+[ext_resource type="Script" uid="uid://dn81ml70n223x" path="res://Scripts/BattleMenuItem.gd" id="3_wxly2"]
+
+[sub_resource type="Resource" id="Resource_3qjnf"]
+script = ExtResource("3_wxly2")
+BM_Label = Array[String](["TALK", "HABLA"])
+BM_Action = Array[String](["hello", "hola"])
+BM_Success = true
+metadata/_custom_type_script = "uid://dn81ml70n223x"
+
+[sub_resource type="Resource" id="Resource_vehhj"]
+script = ExtResource("2_emblb")
+BMenu = Array[ExtResource("3_wxly2")]([SubResource("Resource_3qjnf")])
+metadata/_custom_type_script = "uid://fe5wjrafnqkh"
+
+[sub_resource type="Resource" id="Resource_wxr1c"]
+script = ExtResource("1_wxr1c")
+BattleRound = Array[ExtResource("2_emblb")]([SubResource("Resource_vehhj")])
+BattleVictoryText = Array[String](["you win", "ganar"])
+metadata/_custom_type_script = "uid://c16pc1bpl48ge"
 
 [resource]
-script = ExtResource("2_exu4j")
+script = ExtResource("2_wxr1c")
+BatScript = Dictionary[String, ExtResource("1_wxr1c")]({
+"BAT_1": SubResource("Resource_wxr1c")
+})
 metadata/_custom_type_script = "uid://cw1sm8bwu221e"
