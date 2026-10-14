@@ -67,5 +67,9 @@ func get_menu_names() -> Array:
 	return result
 	
 func get_line() -> String:
+	var is_victory = BAT_menu.BMenu[BAT_round_idx].BM_Success
+	if is_victory:
+		print("Victory is true!")
+		Battle.is_victory = true
 	return BAT_menu.BMenu[BAT_round_idx].BM_Action[LANG]
 	

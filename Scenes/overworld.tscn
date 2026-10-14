@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://k0uecbp32gui" path="res://Scenes/enter_home.gd" id="7_auytq"]
 [ext_resource type="PackedScene" uid="uid://boa27xto1f7s1" path="res://Scenes/hero_cat.tscn" id="8_2ngsa"]
 [ext_resource type="Script" uid="uid://0aewq1xpihbt" path="res://Scenes/shop_door_collision.gd" id="9_c0h7r"]
+[ext_resource type="Script" uid="uid://dc5wkvmeiim0s" path="res://Scripts/friends_house_door_collision.gd" id="9_uvbdg"]
 [ext_resource type="Texture2D" uid="uid://df542koelyeek" path="res://Graphics/Exterior/flowers-Sheet.png" id="13_uvbdg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ltfr"]
@@ -219,6 +220,7 @@ shape = SubResource("RectangleShape2D_683sr")
 [node name="FriendsHouseDoorCollision" type="CollisionShape2D" parent="ExteriorMap/MapObjects/FriendsHouseOutside/FriendsHouseDoor" unique_id=52848346]
 position = Vector2(-36.25, 47.75)
 shape = SubResource("RectangleShape2D_lrjeb")
+script = ExtResource("9_uvbdg")
 
 [node name="HomeOutside" type="Sprite2D" parent="ExteriorMap/MapObjects" unique_id=1631874042]
 y_sort_enabled = true
@@ -258,5 +260,6 @@ position = Vector2(20.5, 49)
 shape = SubResource("RectangleShape2D_o05n3")
 script = ExtResource("9_c0h7r")
 
+[connection signal="body_shape_entered" from="ExteriorMap/MapObjects/FriendsHouseOutside/FriendsHouseDoor" to="ExteriorMap/MapObjects/FriendsHouseOutside/FriendsHouseDoor/FriendsHouseDoorCollision" method="_on_friends_house_door_body_shape_entered"]
 [connection signal="body_entered" from="ExteriorMap/MapObjects/HomeOutside/HomeDoorArea2D" to="ExteriorMap/MapObjects/HomeOutside/HomeDoorArea2D/HomeDoorCollisionShape2Ds" method="_on_home_door_body_entered"]
 [connection signal="body_shape_entered" from="ExteriorMap/MapObjects/ShopOutside/ShopDoor" to="ExteriorMap/MapObjects/ShopOutside/ShopDoor/ShopDoorCollision" method="_on_shop_door_body_shape_entered"]

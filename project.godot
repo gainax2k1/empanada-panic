@@ -21,7 +21,6 @@ GameManager="*uid://ds2q26pac5vlw"
 DialogManager="*uid://baf1kkb2ewge5"
 BattleManager="*uid://dkgxxunsn3wxh"
 Battle="*uid://cxtr4o7xdida"
-BattleHud="*uid://t1mtuhknrbbu"
 
 [display]
 

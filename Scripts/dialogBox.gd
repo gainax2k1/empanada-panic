@@ -11,6 +11,7 @@ func BattleAction() -> void:
 	putText(txt)
 	
 func putText(RTText : String) -> void: ## Takes RichText string and sends to dialog box text window
+	%RTBox.visible = true	
 	%RTBox.text = RTText
 
 func toggleDiagBox() -> void: ## Toggles dialogbox visibility, UNNECCESSARY???

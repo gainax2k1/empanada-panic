@@ -25,32 +25,33 @@
 [ext_resource type="Texture2D" uid="uid://ddeke48152nf5" path="res://Graphics/Interior/stove.png" id="18_1n1yy"]
 [ext_resource type="PackedScene" uid="uid://bgcjr3rnudfy8" path="res://Scenes/npc.tscn" id="18_ew5rc"]
 [ext_resource type="Texture2D" uid="uid://dmy33pr137d1m" path="res://Graphics/Interior/fridge.png" id="21_hhj6u"]
+[ext_resource type="Texture2D" uid="uid://dchpr0a74ujnp" path="res://Graphics/Interior/Door-inside.png" id="26_amt25"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hw515"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k2fx8"]
 texture = ExtResource("2_tvrgx")
 0:0/size_in_atlas = Vector2i(4, 4)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fesy0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glbkl"]
 texture = ExtResource("3_ndt06")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g117r"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ponuo"]
 texture = ExtResource("4_5drqb")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_575xr"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03xay"]
 texture = ExtResource("5_hw515")
 0:0/size_in_atlas = Vector2i(2, 2)
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ga5kc"]
-sources/0 = SubResource("TileSetAtlasSource_hw515")
-sources/1 = SubResource("TileSetAtlasSource_fesy0")
-sources/2 = SubResource("TileSetAtlasSource_g117r")
-sources/3 = SubResource("TileSetAtlasSource_575xr")
+sources/0 = SubResource("TileSetAtlasSource_k2fx8")
+sources/1 = SubResource("TileSetAtlasSource_glbkl")
+sources/2 = SubResource("TileSetAtlasSource_ponuo")
+sources/3 = SubResource("TileSetAtlasSource_03xay")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vkqu"]
 size = Vector2(1159, 316)
@@ -329,6 +330,11 @@ position = Vector2(0.36923218, -0.73846436)
 position = Vector2(-1.1076965, 10.507706)
 shape = SubResource("RectangleShape2D_683sr")
 script = ExtResource("13_hw515")
+
+[node name="DoorInside" type="Sprite2D" parent="." unique_id=66904448]
+position = Vector2(457.00003, 262.00003)
+scale = Vector2(2.5104158, 2.5104158)
+texture = ExtResource("26_amt25")
 
 [connection signal="body_entered" from="Furniture/WoodDesk/Meds/Area2D" to="Furniture/WoodDesk/Meds/Area2D/CollisionShape2D" method="_on_area_2d_body_entered"]
 [connection signal="input_event" from="Furniture/WoodDesk/Meds/Area2D" to="Furniture/WoodDesk/Meds/Area2D/CollisionShape2D" method="_on_area_2d_input_event"]

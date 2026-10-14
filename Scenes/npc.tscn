@@ -150,7 +150,7 @@ y_sort_enabled = true
 position = Vector2(-9.536743e-07, -2.002716e-05)
 scale = Vector2(3.5625, 3.5625)
 sprite_frames = SubResource("SpriteFrames_b0k6i")
-animation = &"face_right"
+animation = &"face_left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=866673925]
 position = Vector2(1, 55)
