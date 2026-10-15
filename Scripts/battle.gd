@@ -38,3 +38,7 @@ func _on_item_list_item_selected(index: int) -> void: ## recieves the index of m
 	
 func _click_sound() -> void:
 	$Button_Click.play()
+
+
+func _on_tree_entered() -> void:
+	GameManager.bg_music_play("res://Audio/Music/battle.ogg")
