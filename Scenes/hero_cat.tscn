@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cjfos3n1cmvu4" path="res://Scripts/HeroCat.gd" id="1_cmer4"]
 [ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="2_o4hi2"]
 [ext_resource type="PackedScene" uid="uid://bxtmppx2eou52" path="res://Scenes/Dialog.tscn" id="3_o4hi2"]
+[ext_resource type="PackedScene" uid="uid://ckxw40hvy2j7o" path="res://Scenes/menu_overlay.tscn" id="3_spbyv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_weeyf"]
 atlas = ExtResource("2_o4hi2")
@@ -158,6 +159,12 @@ animation = &"Facing-Down"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1852814937]
 zoom = Vector2(2, 2)
+
+[node name="MenuOverlay" parent="Camera2D" unique_id=1528240886 instance=ExtResource("3_spbyv")]
+offset_left = -289.0
+offset_top = -161.0
+offset_right = -289.0
+offset_bottom = -161.0
 
 [node name="HeroCollision" type="CollisionShape2D" parent="." unique_id=1669554303]
 y_sort_enabled = true

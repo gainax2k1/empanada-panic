@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://sojnrwfmw6v3" path="res://Graphics/Exterior/cloud_large.png" id="3_1otgo"]
 [ext_resource type="Texture2D" uid="uid://ds116irwm54p5" path="res://Graphics/Battle/Mushroom.png" id="4_pd5xk"]
 [ext_resource type="Texture2D" uid="uid://hwa5tm61eryd" path="res://Graphics/Battle/Onion.png" id="5_f6xt6"]
+[ext_resource type="PackedScene" uid="uid://ckxw40hvy2j7o" path="res://Scenes/menu_overlay.tscn" id="5_upb72"]
 [ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="7_ww2ai"]
 [ext_resource type="PackedScene" uid="uid://bxtmppx2eou52" path="res://Scenes/Dialog.tscn" id="8_lrv64"]
 [ext_resource type="Script" uid="uid://o2awwlvtp23j" path="res://Scenes/menu_list.gd" id="8_upb72"]
@@ -170,6 +171,8 @@ texture = ExtResource("3_1otgo")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=799821744]
 anchor_mode = 0
+
+[node name="MenuOverlay" parent="Camera2D" unique_id=1528240886 instance=ExtResource("5_upb72")]
 
 [node name="Mushroom" type="Sprite2D" parent="." unique_id=99114000]
 position = Vector2(511.5, 409.5)

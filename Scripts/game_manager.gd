@@ -2,7 +2,7 @@ extends Node2D
 
 #music settings
 var bg_music_playing : bool = true ## Set in menu
-var bg_music_track : String = "res://Audio/Music/gloomy_bg.ogg" ## string "res:// ...ogg"
+var bg_music_track : String = "res://Audio/Music/overworld.ogg" ## string "res:// ...ogg"
 
 #scene transition
 var scene_current: String = "res://Scenes/menu.tscn" ## string "res://Scenes/...tcsn"

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ckxw40hvy2j7o"]
+
+[ext_resource type="AudioStream" uid="uid://ccncwl5qvdfn3" path="res://Audio/Sfx/Click.ogg" id="1_rqxty"]
+[ext_resource type="Script" uid="uid://blv1fepou35v7" path="res://Scripts/menu_overlay.gd" id="1_uosjc"]
+
+[node name="MenuOverlay" type="Control" unique_id=1528240886]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uosjc")
+metadata/_edit_horizontal_guides_ = [27.0]
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1505572661]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 2.0
+offset_right = 292.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(0.6243409, 0.004517456, 0.6247949, 1)
+theme_override_colors/font_focus_color = Color(0.6243409, 0.004517456, 0.6247949, 1)
+theme_override_colors/font_pressed_color = Color(0.6243409, 0.004517456, 0.6247949, 1)
+theme_override_colors/font_hover_color = Color(0.6243409, 0.004517456, 0.6247949, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.078431375, 0.9490196, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+flat = true
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "English - inglés"
+popup/item_0/id = 0
+popup/item_1/text = "Español - Spanish"
+popup/item_1/id = 1
+
+[node name="Button_Click" type="AudioStreamPlayer2D" parent="." unique_id=1162013078]
+stream = ExtResource("1_rqxty")
+
+[node name="Music_Toggle" type="CheckButton" parent="." unique_id=1996845211]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 110.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.6243409, 0.004517456, 0.6247949, 1)
+theme_override_colors/font_focus_color = Color(0.6243409, 0.004517456, 0.6247949, 1)
+theme_override_colors/font_pressed_color = Color(0.6243409, 0.004517456, 0.6247949, 1)
+theme_override_colors/font_hover_color = Color(0.6243409, 0.004517456, 0.6247949, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.9490196, 0.078431375, 0.9490196, 1)
+theme_override_colors/font_disabled_color = Color(0.53678745, 0.06824059, 0.5419414, 0.5019608)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+theme_override_colors/button_checked_color = Color(0.6052743, 0.6052743, 0.6052743, 1)
+theme_override_colors/button_unchecked_color = Color(0.32915837, 0.3291584, 0.3291584, 1)
+button_pressed = true
+text = "Music "
+icon_alignment = 1
+
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Music_Toggle" to="." method="_on_music_toggle_toggled"]
