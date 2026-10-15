@@ -4,19 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://3s6xao5pllh4" path="res://Graphics/Interior/wall2.png" id="2_v07f5"]
 [ext_resource type="Texture2D" uid="uid://bjqiodl8ag44u" path="res://Graphics/Interior/wall-floorboard2.png" id="3_fr8jg"]
 [ext_resource type="Texture2D" uid="uid://bg3secgeo2teo" path="res://Graphics/Interior/PurpleVoid.png" id="4_eyk0h"]
+[ext_resource type="Texture2D" uid="uid://bwtlgnd0vju8h" path="res://Graphics/Interior/tv-off.png" id="5_fr8jg"]
 [ext_resource type="Texture2D" uid="uid://cl2pvvc5m288g" path="res://Graphics/Interior/outlet.png" id="6_kbx6u"]
 [ext_resource type="Texture2D" uid="uid://d0d56ypbok2tw" path="res://Graphics/Interior/power-cable.png" id="7_mwcim"]
 [ext_resource type="Texture2D" uid="uid://cdlxmvk7moxho" path="res://Graphics/Interior/cabinet.png" id="8_j5wg5"]
 [ext_resource type="Texture2D" uid="uid://fdv631epfl0m" path="res://Graphics/Interior/sink.png" id="9_0ddwk"]
+[ext_resource type="Texture2D" uid="uid://n4h4hpiosc88" path="res://Graphics/Interior/laptop-computer.png" id="9_rs2qi"]
+[ext_resource type="Texture2D" uid="uid://dvn0nwe7s3kas" path="res://Graphics/Interior/folding-chair.png" id="10_eyk0h"]
 [ext_resource type="Texture2D" uid="uid://ddeke48152nf5" path="res://Graphics/Interior/stove.png" id="10_fxvnj"]
 [ext_resource type="Texture2D" uid="uid://dmy33pr137d1m" path="res://Graphics/Interior/fridge.png" id="11_tkeyn"]
 [ext_resource type="Texture2D" uid="uid://dhli754c3detf" path="res://Graphics/Interior/wood-desk.png" id="13_sx4nm"]
 [ext_resource type="Texture2D" uid="uid://0ma7nepncbg8" path="res://Graphics/Interior/mug.png" id="17_c2x00"]
 [ext_resource type="Texture2D" uid="uid://de7cwiatt2y2b" path="res://Graphics/Interior/desktop-coputer.png" id="18_dsa2s"]
+[ext_resource type="Texture2D" uid="uid://ni3ore3op5uo" path="res://Graphics/Interior/coffee-table.png" id="19_5uix2"]
+[ext_resource type="Texture2D" uid="uid://dyl3jknqi14jc" path="res://Graphics/Interior/bed2.png" id="19_rs2qi"]
 [ext_resource type="Texture2D" uid="uid://bu58oumhtvfo5" path="res://Graphics/Interior/desk-chair.png" id="19_s1f26"]
 [ext_resource type="Texture2D" uid="uid://dchpr0a74ujnp" path="res://Graphics/Interior/Door-inside.png" id="20_52d6h"]
-[ext_resource type="Texture2D" uid="uid://by3psearidhup" path="res://Graphics/Interior/bed.png" id="20_ub8o4"]
 [ext_resource type="PackedScene" uid="uid://bgcjr3rnudfy8" path="res://Scenes/npc.tscn" id="21_vh811"]
+[ext_resource type="Texture2D" uid="uid://bui1br5bqcbc3" path="res://Graphics/Interior/laptop-computer2.png" id="22_kbx6u"]
+[ext_resource type="PackedScene" uid="uid://bc8ctkcnpkeuc" path="res://Scenes/npc2.tscn" id="22_rs2qi"]
 [ext_resource type="PackedScene" uid="uid://boa27xto1f7s1" path="res://Scenes/hero_cat.tscn" id="22_t6lxp"]
 [ext_resource type="Texture2D" uid="uid://bxoykkymlsnbb" path="res://Graphics/Interior/Door2.png" id="23_v07f5"]
 [ext_resource type="Script" uid="uid://h0j8c873dea0" path="res://Scenes/leave_home.gd" id="24_m6qcf"]
@@ -113,6 +119,20 @@ shape = SubResource("RectangleShape2D_gueu0")
 
 [node name="WallDecor" type="TileMapLayer" parent="." unique_id=1770946912]
 
+[node name="TvOff" type="Sprite2D" parent="WallDecor" unique_id=1054546260]
+position = Vector2(465, 248)
+scale = Vector2(1.875, 1.875)
+texture = ExtResource("5_fr8jg")
+
+[node name="Outlet" type="Sprite2D" parent="WallDecor/TvOff" unique_id=615642491]
+position = Vector2(-40, 16.533325)
+scale = Vector2(0.53333336, 0.53333336)
+texture = ExtResource("6_kbx6u")
+
+[node name="PowerCable" type="Sprite2D" parent="WallDecor/TvOff/Outlet" unique_id=156983110]
+position = Vector2(15, 6)
+texture = ExtResource("7_mwcim")
+
 [node name="Outlet" type="Sprite2D" parent="WallDecor" unique_id=1744800571]
 position = Vector2(134, 279)
 texture = ExtResource("6_kbx6u")
@@ -125,7 +145,24 @@ texture = ExtResource("6_kbx6u")
 position = Vector2(15, 6)
 texture = ExtResource("7_mwcim")
 
+[node name="DoorInside" type="Sprite2D" parent="WallDecor" unique_id=199194972]
+position = Vector2(325.00003, 262)
+scale = Vector2(2.4791663, 2.4791663)
+texture = ExtResource("20_52d6h")
+
 [node name="Furniture" type="TileMapLayer" parent="." unique_id=263590131]
+
+[node name="WoodDesk2" type="Sprite2D" parent="Furniture" unique_id=803373892]
+position = Vector2(384, 324)
+texture = ExtResource("13_sx4nm")
+
+[node name="LaptopComputer" type="Sprite2D" parent="Furniture/WoodDesk2" unique_id=1965741783]
+position = Vector2(-3, -11)
+texture = ExtResource("9_rs2qi")
+
+[node name="FoldingChair" type="Sprite2D" parent="Furniture/WoodDesk2" unique_id=1226123724]
+position = Vector2(-11, 18)
+texture = ExtResource("10_eyk0h")
 
 [node name="Kitchen" type="TileMapLayer" parent="Furniture" unique_id=1535324738]
 
@@ -204,7 +241,7 @@ texture = ExtResource("17_c2x00")
 
 [node name="Bed" type="Sprite2D" parent="Furniture" unique_id=60336412]
 position = Vector2(696, 429)
-texture = ExtResource("20_ub8o4")
+texture = ExtResource("19_rs2qi")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Furniture/Bed" unique_id=1827772386]
 
@@ -212,16 +249,37 @@ texture = ExtResource("20_ub8o4")
 position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_0stiu")
 
+[node name="CoffeeTable" type="Sprite2D" parent="Furniture" unique_id=1066379528]
+position = Vector2(464.00003, 409)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_5uix2")
+
 [node name="Artemis" parent="Furniture" unique_id=1450346046 groups=["interactable"] instance=ExtResource("21_vh811")]
 position = Vector2(631.99994, 314.00003)
 scale = Vector2(0.3124988, 0.28408954)
 NPC_dialog_didxs = Array[String](["TEST_CONV"])
+
+[node name="Neener" parent="Furniture" unique_id=1112301374 instance=ExtResource("22_rs2qi")]
+position = Vector2(311, 351)
+scale = Vector2(0.35, 0.35)
 
 [node name="HeroCat" parent="Furniture" unique_id=1325555174 instance=ExtResource("22_t6lxp")]
 y_sort_enabled = true
 position = Vector2(399, 354.99997)
 scale = Vector2(1.0000001, 1)
 collision_layer = 65535
+
+[node name="WoodDesk3" type="Sprite2D" parent="Furniture" unique_id=1508502509]
+position = Vector2(558, 315)
+texture = ExtResource("13_sx4nm")
+
+[node name="LaptopComputer2" type="Sprite2D" parent="Furniture/WoodDesk3" unique_id=231514664]
+position = Vector2(6, -11)
+texture = ExtResource("22_kbx6u")
+
+[node name="FoldingChair" type="Sprite2D" parent="Furniture/WoodDesk3" unique_id=942226462]
+position = Vector2(-4, 24)
+texture = ExtResource("10_eyk0h")
 
 [node name="Door" type="Sprite2D" parent="." unique_id=137071214]
 modulate = Color(1, 1, 1, 0.60784316)
@@ -236,10 +294,5 @@ position = Vector2(0.36923218, -0.73846436)
 position = Vector2(-1.1076965, 10.507706)
 shape = SubResource("RectangleShape2D_60vgp")
 script = ExtResource("24_m6qcf")
-
-[node name="DoorInside" type="Sprite2D" parent="." unique_id=199194972]
-position = Vector2(325.00003, 262)
-scale = Vector2(2.4791663, 2.4791663)
-texture = ExtResource("20_52d6h")
 
 [connection signal="body_entered" from="Door/Area2D" to="Door/Area2D/LeaveHome" method="_on_area_2d_body_entered"]
