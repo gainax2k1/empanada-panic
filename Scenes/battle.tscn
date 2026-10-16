@@ -4,13 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cochiwby3hbtq" path="res://Graphics/Exterior/cloud_small.png" id="2_1ruyk"]
 [ext_resource type="Texture2D" uid="uid://bnnnrtg0e8oqy" path="res://Graphics/Exterior/world_map_spritesheet-Sheet.png" id="2_f6xt6"]
 [ext_resource type="Texture2D" uid="uid://sojnrwfmw6v3" path="res://Graphics/Exterior/cloud_large.png" id="3_1otgo"]
-[ext_resource type="Texture2D" uid="uid://ds116irwm54p5" path="res://Graphics/Battle/Mushroom.png" id="4_pd5xk"]
-[ext_resource type="Texture2D" uid="uid://hwa5tm61eryd" path="res://Graphics/Battle/Onion.png" id="5_f6xt6"]
 [ext_resource type="PackedScene" uid="uid://ckxw40hvy2j7o" path="res://Scenes/menu_overlay.tscn" id="5_upb72"]
 [ext_resource type="Texture2D" uid="uid://d0y2rfc8ptajg" path="res://Graphics/Characters/hero-cat-big-animated-Sheet.png" id="7_ww2ai"]
 [ext_resource type="PackedScene" uid="uid://bxtmppx2eou52" path="res://Scenes/Dialog.tscn" id="8_lrv64"]
 [ext_resource type="Script" uid="uid://o2awwlvtp23j" path="res://Scenes/menu_list.gd" id="8_upb72"]
 [ext_resource type="AudioStream" uid="uid://ccncwl5qvdfn3" path="res://Audio/Sfx/Click.ogg" id="9_qeyqd"]
+[ext_resource type="Texture2D" uid="uid://dhe5nqw0inf5w" path="res://Graphics/Battle/shop-cat-battle.png" id="10_k7mbx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6xt6"]
 texture = ExtResource("2_f6xt6")
@@ -174,16 +173,6 @@ anchor_mode = 0
 
 [node name="MenuOverlay" parent="Camera2D" unique_id=1528240886 instance=ExtResource("5_upb72")]
 
-[node name="Mushroom" type="Sprite2D" parent="." unique_id=99114000]
-position = Vector2(511.5, 409.5)
-scale = Vector2(2.578125, 2.578125)
-texture = ExtResource("4_pd5xk")
-
-[node name="Onion" type="Sprite2D" parent="." unique_id=1824697257]
-position = Vector2(328.5, 442.5)
-scale = Vector2(3.140625, 3.140625)
-texture = ExtResource("5_f6xt6")
-
 [node name="HUDMenu" type="Panel" parent="." unique_id=1339017253]
 offset_left = 88.0
 offset_top = 433.0
@@ -213,6 +202,7 @@ scale = Vector2(6.78125, 6.78125)
 sprite_frames = SubResource("SpriteFrames_ga5kc")
 
 [node name="DialogBox" parent="." unique_id=937173483 instance=ExtResource("8_lrv64")]
+z_index = 1
 offset_left = 555.0
 offset_top = 142.0
 offset_right = 595.0
@@ -220,6 +210,11 @@ offset_bottom = 182.0
 
 [node name="Button_Click" type="AudioStreamPlayer2D" parent="." unique_id=462154163]
 stream = ExtResource("9_qeyqd")
+
+[node name="ShopCatBattle" type="Sprite2D" parent="." unique_id=314575321]
+position = Vector2(390, 441)
+scale = Vector2(7.1562505, 7.1562505)
+texture = ExtResource("10_k7mbx")
 
 [connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="item_selected" from="HUDMenu/MarginContainer/MenuList" to="." method="_on_item_list_item_selected"]

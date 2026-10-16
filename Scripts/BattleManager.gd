@@ -1,4 +1,6 @@
-extends Node
+extends Node2D
+
+signal BAT_victory_signal(BAT_victory : String) ## emit victory string "you win" or whatev.
 
 @export var BAT_current_didx : String = "" ## Key to BS dictiory (ie, "BAT_1")
 @export var BAT_instance : BattleInstance ## holds current retrieved battle instance
@@ -8,6 +10,7 @@ extends Node
 @export var BAT_menu_size : int = 0 ## number of options in menu
 @export var BAT_menu_idx : int = 0 ## index of menu currently selected, like 0 = talk, 1 = item, etc...
 @export var BAT_victory : String = "" ## String of victory text
+#@export var BAT_is_victory = false
 
 var MenuList : ItemList
 var LANG = 0 ## lang index for dialog/battle strings, 0 = eng, 1 = esp, etc. Get's from DialogManager when battle set
@@ -70,6 +73,13 @@ func get_line() -> String:
 	var is_victory = BAT_menu.BMenu[BAT_round_idx].BM_Success
 	if is_victory:
 		print("Victory is true!")
-		Battle.is_victory = true
+		BAT_victory_signal.emit(BAT_victory)
+
 	return BAT_menu.BMenu[BAT_round_idx].BM_Action[LANG]
+
+func play_victory() -> void:
+	GameManager.bg_music_play("res://Audio/Music/Happy_short.ogg")
+
+func emit_victory(victory_text : String = "You win!"):
+	BAT_victory_signal.emit(victory_text)
 	

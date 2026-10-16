@@ -7,20 +7,28 @@
 
 [sub_resource type="Resource" id="Resource_3qjnf"]
 script = ExtResource("3_wxly2")
-BM_Label = Array[String](["TALK", "HABLA"])
-BM_Action = Array[String](["hello", "hola"])
+BM_Label = Array[String](["Speak", "Hablar"])
+BM_Action = Array[String](["You smile nervously, and show them the list of ingredients you need.", "Sonríes nerviosa y les muestras la lista de ingredientes que necesitas."])
+BM_Success = true
+metadata/_custom_type_script = "uid://dn81ml70n223x"
+
+[sub_resource type="Resource" id="Resource_voixo"]
+script = ExtResource("3_wxly2")
+BM_Label = Array[String](["Flee", "Huir"])
+BM_Action = Array[String](["You shake your head, and quickly walk away. You find the ingredients on your own.", "Niegas con la cabeza y te alejas rápidamente. Encuentras los ingredientes por tu cuenta."])
 BM_Success = true
 metadata/_custom_type_script = "uid://dn81ml70n223x"
 
 [sub_resource type="Resource" id="Resource_vehhj"]
 script = ExtResource("2_emblb")
-BMenu = Array[ExtResource("3_wxly2")]([SubResource("Resource_3qjnf")])
+BMenu = Array[ExtResource("3_wxly2")]([SubResource("Resource_3qjnf"), SubResource("Resource_voixo")])
 metadata/_custom_type_script = "uid://fe5wjrafnqkh"
 
 [sub_resource type="Resource" id="Resource_wxr1c"]
 script = ExtResource("1_wxr1c")
+BattleStart = Array[String](["A friendly employee approaches! They ask if they can help you with anything.", "¡Se acerca un empleado amable! Te preguntan si pueden ayudarte en algo."])
 BattleRound = Array[ExtResource("2_emblb")]([SubResource("Resource_vehhj")])
-BattleVictoryText = Array[String](["you win", "ganar"])
+BattleVictoryText = Array[String](["You gather all your ingredients, pay, and leave the store.", "Recoges todos tus ingredientes, pagas y sales de la tienda."])
 metadata/_custom_type_script = "uid://c16pc1bpl48ge"
 
 [resource]

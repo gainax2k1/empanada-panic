@@ -71,5 +71,22 @@ text = "Quit"
 [node name="Button_Click" type="AudioStreamPlayer2D" parent="." unique_id=1671098526]
 stream = ExtResource("2_xhh6f")
 
+[node name="OptionButton" type="OptionButton" parent="." unique_id=1704058075]
+offset_left = 844.0
+offset_top = 308.0
+offset_right = 1019.0
+offset_bottom = 333.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+flat = true
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "English - inglés"
+popup/item_0/id = 0
+popup/item_1/text = "Español - Spanish"
+popup/item_1/id = 1
+
 [connection signal="pressed" from="Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Quit_Buton" to="." method="_on_quit_buton_pressed"]
+[connection signal="toggled" from="OptionButton" to="." method="_on_option_button_toggled"]

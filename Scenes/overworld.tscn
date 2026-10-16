@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://hw0ebeffof7r"]
 
+[ext_resource type="Script" uid="uid://dk7rmqp5ufq3g" path="res://Scenes/overworld.gd" id="1_v8nvt"]
 [ext_resource type="TileSet" uid="uid://yldsf6tu22jq" path="res://Graphics/Exterior/exterior_tile_set.tres" id="2_6s5ae"]
 [ext_resource type="Texture2D" uid="uid://d26ll355a4gvq" path="res://Graphics/Exterior/friends-house-outside.png" id="3_4qj6l"]
 [ext_resource type="Texture2D" uid="uid://d1bin82xyb47v" path="res://Graphics/Exterior/home-outside.png" id="3_i8gr5"]
@@ -145,6 +146,7 @@ size = Vector2(145, 62)
 size = Vector2(17, 6)
 
 [node name="Overworld" type="Node2D" unique_id=1074243832]
+script = ExtResource("1_v8nvt")
 
 [node name="ParallaxBackground" type="Parallax2D" parent="." unique_id=1207384476]
 scroll_offset = Vector2(0, -254)
@@ -260,6 +262,7 @@ position = Vector2(20.5, 49)
 shape = SubResource("RectangleShape2D_o05n3")
 script = ExtResource("9_c0h7r")
 
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
 [connection signal="body_shape_entered" from="ExteriorMap/MapObjects/FriendsHouseOutside/FriendsHouseDoor" to="ExteriorMap/MapObjects/FriendsHouseOutside/FriendsHouseDoor/FriendsHouseDoorCollision" method="_on_friends_house_door_body_shape_entered"]
 [connection signal="body_entered" from="ExteriorMap/MapObjects/HomeOutside/HomeDoorArea2D" to="ExteriorMap/MapObjects/HomeOutside/HomeDoorArea2D/HomeDoorCollisionShape2Ds" method="_on_home_door_body_entered"]
 [connection signal="body_shape_entered" from="ExteriorMap/MapObjects/ShopOutside/ShopDoor" to="ExteriorMap/MapObjects/ShopOutside/ShopDoor/ShopDoorCollision" method="_on_shop_door_body_shape_entered"]

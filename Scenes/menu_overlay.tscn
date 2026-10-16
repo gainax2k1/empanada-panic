@@ -14,6 +14,7 @@ script = ExtResource("1_uosjc")
 metadata/_edit_horizontal_guides_ = [27.0]
 
 [node name="OptionButton" type="OptionButton" parent="." unique_id=1505572661]
+visible = false
 layout_mode = 0
 offset_left = 117.0
 offset_top = 2.0

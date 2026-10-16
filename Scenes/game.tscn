@@ -29,5 +29,6 @@ visible = false
 position = Vector2(-2, -1)
 
 [node name="FriendsHouse" parent="." unique_id=489823926 instance=ExtResource("6_i6g32")]
+visible = false
 
 [connection signal="tree_entered" from="Interior" to="Interior" method="_on_tree_entered"]
