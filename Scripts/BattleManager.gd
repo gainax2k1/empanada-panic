@@ -1,6 +1,5 @@
-extends Node2D
 
-signal BAT_victory_signal(BAT_victory : String) ## emit victory string "you win" or whatev.
+extends Node
 
 @export var BAT_current_didx : String = "" ## Key to BS dictiory (ie, "BAT_1")
 @export var BAT_instance : BattleInstance ## holds current retrieved battle instance
@@ -10,12 +9,13 @@ signal BAT_victory_signal(BAT_victory : String) ## emit victory string "you win"
 @export var BAT_menu_size : int = 0 ## number of options in menu
 @export var BAT_menu_idx : int = 0 ## index of menu currently selected, like 0 = talk, 1 = item, etc...
 @export var BAT_victory : String = "" ## String of victory text
-#@export var BAT_is_victory = false
+@export var is_victory : bool = false ## true when victory option chosen from menu
 
 var MenuList : ItemList
 var LANG = 0 ## lang index for dialog/battle strings, 0 = eng, 1 = esp, etc. Get's from DialogManager when battle set
 
 @onready var BS = load("res://Scripts/full_battle_script.tres") ## Full Battle Script
+
 func _ready() -> void:
 	set_battle("BAT_1")
 	
@@ -24,7 +24,6 @@ func set_battle(didx: String) -> void:
 	print("BS: ", BS)
 	
 	LANG = DialogManager.LANG
-
 	BAT_current_didx = didx
 	BAT_instance = _get_battle_instance() ## sets battle instance, with battleround[idx] and battlevictorytext[lang]
 	print("BAT_currrent: ", BAT_instance)
@@ -43,7 +42,7 @@ func set_battle(didx: String) -> void:
 func _get_battle_instance() -> BattleInstance:
 	print("_get_battle_instance: ", BAT_current_didx)
 	return BS.BatScript.get(BAT_current_didx)
-	
+
 func _get_victory_text() -> String:
 	return BAT_instance.BattleVictoryText[LANG]
 
@@ -70,16 +69,13 @@ func get_menu_names() -> Array:
 	return result
 	
 func get_line() -> String:
-	var is_victory = BAT_menu.BMenu[BAT_round_idx].BM_Success
+	is_victory = BAT_menu.BMenu[BAT_round_idx].BM_Success
 	if is_victory:
-		print("Victory is true!")
-		BAT_victory_signal.emit(BAT_victory)
 
+		print("get_line -> Victory is true!")
+		print(BAT_victory)
+	
 	return BAT_menu.BMenu[BAT_round_idx].BM_Action[LANG]
 
 func play_victory() -> void:
 	GameManager.bg_music_play("res://Audio/Music/Happy_short.ogg")
-
-func emit_victory(victory_text : String = "You win!"):
-	BAT_victory_signal.emit(victory_text)
-	

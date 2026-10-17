@@ -14,6 +14,8 @@ func run_turn() -> void:
 	
 func narrate_text() -> void:
 	pass
+	
+
 
 func _on_item_list_item_selected(index: int) -> void: ## recieves the index of menu item selected
 	_click_sound()

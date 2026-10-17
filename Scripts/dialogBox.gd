@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 func RunDialog(didx: String) -> void: ## REcieves didx:String, calls dialogmanager and set's dialog to didx
 	DialogManager.set_dialogue(didx)	
@@ -7,7 +7,10 @@ func RunDialog(didx: String) -> void: ## REcieves didx:String, calls dialogmanag
 	
 func BattleAction() -> void:
 	var txt = BattleManager.get_line()
+	
 	putText(txt)
+	if BattleManager.is_victory:
+		victory(BattleManager.BAT_victory)
 	
 	
 func putText(RTText : String) -> void: ## Takes RichText string and sends to dialog box text window
@@ -16,4 +19,10 @@ func putText(RTText : String) -> void: ## Takes RichText string and sends to dia
 
 func toggleDiagBox() -> void: ## Toggles dialogbox visibility, UNNECCESSARY???
 	%RTBox.visible = !%RTBox.visible
+	
+func victory(victory_text : String) -> void:
+	## add pause? something to continue next action. maybe click/spacebar to continue event
+	##  llook at hero-cat's signal for interaction....
+	
+	putText(victory_text)
 	
